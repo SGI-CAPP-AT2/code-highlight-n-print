@@ -1,0 +1,55 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+textarea,input{
+    width: calc(100vw - 12px);
+    resize: vertical;
+    max-height: 60vh;
+    outline: none;
+    border: 1px dashed red;
+    margin: 0 3px;
+}
+*{
+    font-family: monospace;
+}
+.outputBlock{
+    width: 60vw;
+    resize: both;
+}
+p{
+    margin: 0;
+    border-left: 5px solid black;
+    border-right: 1px solid black;
+}
+p.output,.wm{
+    border-right: 1px solid black;
+}
+p.wm{
+    font-size: 14px;
+    color: rgb(0, 0, 0) !important;
+    border-bottom: 1px solid black;
+}
+p.filenames{
+    border-top: 1px solid black;
+    border-bottom: 1px dashed black;
+}
+p:not(.input,.filenames){
+    background-color: rgb(219, 219, 219);
+    color: rgb(0, 0, 0);
+}
+.outputBlock{
+    margin: auto;
+}
+button{
+    margin: 3px;
+}
+.wm span{
+    padding-left: 10px;
+}
+span.filename{
+    padding-right: 10px;
+}
+.img img{
+    max-width: calc(100% - 20px);
+}

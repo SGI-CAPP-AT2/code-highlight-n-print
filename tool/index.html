@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ss/style.css">
+    <link rel="stylesheet" href="ss/hljs.highlight.css">
+</head>
+<body>
+    <script>
+        var $=q=>document.querySelector(q),lang="c";
+        var render = () => {
+            $("div.output").innerHTML=`
+            <p> Waiting for script </p> 
+            <ol><li><a 
+                href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"
+                >hljs</a></li>
+                <li><a 
+                href="ss/app.js"
+                >app</a></li></ol>
+            `
+        }
+        let changeFileName=(newName)=>{
+            $("span.filename").innerText=newName
+            lang=newName.split(".")[newName.split(".").length-1]
+            render($("textarea#input").value,"ip")
+        }
+        var changeImageInput = (value) =>{
+            console.log(value)
+            if(value=="true"){
+                $(".imageOutput").style.display="inline"
+            }else{
+                $(".imageOutput").style.display="none"
+            }
+        }
+    </script>
+    <input class="fn" oninput="changeFileName(this.value)" placeholder="filename">
+    <textarea id="input"
+        placeholder="Enter Code ..."
+        oninput="render(this.value,'ip')"
+    ></textarea>
+    <textarea class="input_of_op"
+        placeholder="Enter output ..."
+        oninput="render(this.value,'op')"
+    ></textarea>
+    <input oninput="sessionStorage.setItem('title',this.value)" style="margin-bottom: 5px;" type="text" placeholder="Optional text for print title" class="optionaltext">
+    <label style="margin: 3px;">Image Output
+    <select onchange="changeImageInput(this.value)" name="Image Output" id="">
+        <option selected="selected" default value="false">false</option>
+        <option value="true">
+            true
+        </option>
+    </select></label>
+    <div class="outputBlock" text-editable="true" style="margin-top:10px">
+        <p class="filenames">
+            <span class="filename">Arithmetic.cpp</span>
+        </p>
+        <p class="input">
+                <span class="line">1. line no 1</span><br>
+                <span class="line">2. line no 1</span>
+        </p>
+        <p class="output">
+            <span class="output">
+                Printed
+            </span><br>
+        </p>
+        <p align="center" class="img">
+            <span style="display: none;" class="imageOutput" contenteditable="true">
+            Paste Your Image Here</span>
+        </p>
+        <p class="wm" align="right">
+            <span contenteditable="true">
+                SyCo06
+            </span>
+        </p>
+    </div>
+    <button onclick="copyToClipboard(this)" class="copy">
+        Copy
+    </button>
+    <button onclick="PRINT()" class="copy">
+        print 
+    </button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="ss/app.js"></script>
+</body>
+</html>

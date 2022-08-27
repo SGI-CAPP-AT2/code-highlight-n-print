@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ss/style.css">
+</head>
+<body>
+    <h3>
+        Loading...
+    </h3>
+    <div style="width:100vw;" class="outputBlock">
+
+    </div>
+    <script>
+        var $=q=>document.querySelector(q);
+        window.onload=()=>{
+            let t = sessionStorage.getItem('title'), h = sessionStorage.getItem('printHtml');
+            $("h3").innerText=t;
+            $("div.outputBlock").innerHTML=h;
+            print()
+        }
+    </script>
+</body>
+</html>
