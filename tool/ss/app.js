@@ -11,7 +11,7 @@ render=(val, type)=>{
         }
         $("p.input").innerHTML=htmlBlock;
     }else{
-        $("span.output").innerText=val;
+        $("p.output").innerText=val;
     }
 }
 copyToClipboard=(but)=>{

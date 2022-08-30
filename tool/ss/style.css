@@ -53,3 +53,6 @@ span.filename{
 .img img{
     max-width: calc(100% - 20px);
 }
+p.output{
+ white-space: pre;   
+}
