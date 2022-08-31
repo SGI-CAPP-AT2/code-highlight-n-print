@@ -4,24 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Printed with github:SGI-CAPP-AT2/code-highlight-n-print</title>
     <link rel="stylesheet" href="ss/style.css">
 </head>
-<body>
+<body class="print">
+    <style>
+    .outputBlock,.list{
+    width: calc(100vw - 30px);
+    }
+    </style>
+    <div class="list" style="margin: auto;">
     <h3>
         Loading...
-    </h3>
-    <div style="width:100vw;" class="outputBlock">
-
-    </div>
-    <script>
-        var $=q=>document.querySelector(q);
-        window.onload=()=>{
-            let t = sessionStorage.getItem('title'), h = sessionStorage.getItem('printHtml');
-            $("h3").innerText=t;
-            $("div.outputBlock").innerHTML=h;
-            print()
-        }
-    </script>
+    </h3></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="ss/printer.js"></script>
 </body>
 </html>

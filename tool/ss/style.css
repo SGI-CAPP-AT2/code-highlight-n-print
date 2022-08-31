@@ -56,3 +56,13 @@ span.filename{
 p.output{
  white-space: pre;   
 }
+div.menubar{
+    display: flex;
+    background-color: black;
+}
+div.menubar *{
+    color: aliceblue;
+}
+@media print {
+    .list .outputBlock{page-break-after: always;}
+}

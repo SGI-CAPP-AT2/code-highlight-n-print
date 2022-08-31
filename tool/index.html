@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>code-highlight-n-print/tool</title>
+    <title>v2.1.0 : code-highlight-n-print/tool</title>
     <link rel="stylesheet" href="ss/style.css">
     <link rel="stylesheet" href="ss/hljs.highlight.css">
 </head>
@@ -36,7 +36,7 @@
             }
         }
     </script>
-    <input class="fn" oninput="changeFileName(this.value)" placeholder="filename">
+    <input class="fn" oninput="changeFileName(this.value)" placeholder="filename" id="filename"/>
     <textarea id="input"
         placeholder="Enter Code ..."
         oninput="render(this.value,'ip')"
@@ -45,15 +45,15 @@
         placeholder="Enter output ..."
         oninput="render(this.value,'op')"
     ></textarea>
-    <input oninput="sessionStorage.setItem('title',this.value)" style="margin-bottom: 5px;" type="text" placeholder="Optional text for print title" class="optionaltext">
+    <input style="margin-bottom: 5px;" type="text" placeholder="Optional text for print title" class="optionaltext">
     <label style="margin: 3px;">Image Output
-    <select onchange="changeImageInput(this.value)" name="Image Output" id="">
+    <select onchange="changeImageInput(this.value)" name="Image Output" id="rtf_bool">
         <option selected="selected" default value="false">false</option>
         <option value="true">
             true
         </option>
     </select></label>
-    <div class="outputBlock" text-editable="true" style="margin-top:10px">
+    <div class="outputBlock" style="margin-top:10px">
         <p class="filenames">
             <span class="filename">Arithmetic.cpp</span>
         </p>
@@ -62,11 +62,11 @@
                 <span class="line">2. line no 1</span>
         </p>
         <p class="output">Printed</p>
-        <p align="center" class="img">
+        <p align="center" class="img" id="rtf_op">
             <span style="display: none;" class="imageOutput" contenteditable="true">
             Paste Your Image Here</span>
         </p>
-        <p class="wm" align="right">
+        <p class="wm" id="wm" align="right">
             <span contenteditable="true">
                 SyCo06
             </span>
@@ -76,12 +76,23 @@
         Copy
     </button>
     <button onclick="PRINT()" class="copy">
-        print 
+        Print 
     </button>
-    <span class="version">
-        v 2.0
-    </span>
+    <button onclick="addToQueue()">
+        Queue
+    </button><br>
+    <div class="queue">
+
+    </div>
+    <br>
+    <div class="menubar">
+        <span>v 2.1.0 (Queue added) </span>&ThickSpace;
+        <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/issues/new" target="_blank">
+             Raise A issue
+        </a>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="ss/app.js"></script>
+    <script src="ss/printer-queue.js"></script>
 </body>
 </html>

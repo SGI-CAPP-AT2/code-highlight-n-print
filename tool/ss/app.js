@@ -1,4 +1,4 @@
-var input,output;
+var input,output,
 render=(val, type)=>{
     let htmlBlock="",htmlLine,tempBlock;
     if(type=="ip"){
@@ -13,7 +13,7 @@ render=(val, type)=>{
     }else{
         $("p.output").innerText=val;
     }
-}
+},
 copyToClipboard=(but)=>{
     let range = new Range();
     range.setStart($("div.outputBlock"), 0);
@@ -26,13 +26,9 @@ copyToClipboard=(but)=>{
     setTimeout(e=>{
         but.innerText="Copy"
     },1000)
-}
+};
 function padLeadingZeros(num, size) {
     var s = num+"";
     while (s.length < size) s = "0" + s;
     return s;
-}
-function PRINT(){
-    sessionStorage.setItem("printHtml",$(".outputBlock").innerHTML)
-    window.location.assign("print.html");
 }
