@@ -1,9 +1,10 @@
 html,body{
-    margin: 0;
+    margin: 0 !important;
     padding: 0;
+    padding-top: 10px;
 }
 textarea,input{
-    width: calc(100vw - 12px);
+    width: calc(100vw - 32px);
     resize: vertical;
     max-height: 60vh;
     outline: none;

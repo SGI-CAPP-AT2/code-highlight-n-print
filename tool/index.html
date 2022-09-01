@@ -7,6 +7,7 @@
     <title>v2.1.0 : code-highlight-n-print/tool</title>
     <link rel="stylesheet" href="ss/style.css">
     <link rel="stylesheet" href="ss/hljs.highlight.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
 </head>
 <body>
     <script>
@@ -23,9 +24,7 @@
             `
         }
         let changeFileName=(newName)=>{
-            $("span.filename").innerText=newName
-            lang=newName.split(".")[newName.split(".").length-1]
-            render($("textarea#input").value,"ip")
+            $("span.filename").innerText=newName;
         }
         var changeImageInput = (value) =>{
             console.log(value)
@@ -36,7 +35,7 @@
             }
         }
     </script>
-    <input class="fn" oninput="changeFileName(this.value)" placeholder="filename" id="filename"/>
+    <input style="width: calc(100vw - 50px);" class="fn" oninput="changeFileName(this.value)" placeholder="filename" id="filename"/>
     <textarea id="input"
         placeholder="Enter Code ..."
         oninput="render(this.value,'ip')"
@@ -45,7 +44,7 @@
         placeholder="Enter output ..."
         oninput="render(this.value,'op')"
     ></textarea>
-    <input style="margin-bottom: 5px;" type="text" placeholder="Optional text for print title" class="optionaltext">
+    <input style="margin-bottom: 5px;width: calc(100vw - 50px);" type="text" placeholder="Optional text for print title" class="optionaltext">
     <label style="margin: 3px;">Image Output
     <select onchange="changeImageInput(this.value)" name="Image Output" id="rtf_bool">
         <option selected="selected" default value="false">false</option>
@@ -86,10 +85,11 @@
     </div>
     <br>
     <div class="menubar">
-        <span>v 2.1.0 (Queue added) </span>&ThickSpace;
+        <span>v 2.2.1</span>&ThickSpace;
         <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/issues/new" target="_blank">
              Raise A issue
-        </a>
+        </a>&ThickSpace;<span>
+        UI and fix #1</span>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="ss/app.js"></script>

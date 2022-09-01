@@ -2,7 +2,7 @@ var input,output,
 render=(val, type)=>{
     let htmlBlock="",htmlLine,tempBlock;
     if(type=="ip"){
-        tempBlock=hljs.highlight(val,{language:lang||"c"}).value
+        tempBlock=getHighlight(val,$("span.filename").innerText)
         size=(tempBlock.split("\n").length+"").length;
         for(i in tempBlock.split("\n")){
             str = padLeadingZeros(parseInt(i)+1,size);
@@ -31,4 +31,11 @@ function padLeadingZeros(num, size) {
     var s = num+"";
     while (s.length < size) s = "0" + s;
     return s;
+}
+function getHighlight(code,filename){
+    if(filename.includes(".")){
+        return hljs.highlight(code,{language:filename.split(".")[filename.split(".").length-1]}).value;
+    }else{
+        return code;
+    }
 }

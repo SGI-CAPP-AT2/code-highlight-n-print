@@ -33,7 +33,7 @@ updateUIqueue = (list,tar) =>{
             <span class="filename">${cq.filename}</span>
         </p>
         <p class="input">
-                ${sendCodeHighlight(cq.code,cq.filename.split(".")[cq.filename.split(".").length-1])}
+        ${sendCodeHighlight(cq.code,cq.filename)}
         </p>
         <p class="output">${cq.output}</p>
         <p align="center" class="img">
@@ -54,9 +54,9 @@ updateUIqueue = (list,tar) =>{
     }
     tar.innerHTML=html;
 },
-sendCodeHighlight=(val,lang)=>{
+sendCodeHighlight=(val,filename)=>{
     let htmlBlock="",htmlLine,tempBlock;
-        tempBlock=hljs.highlight(val,{language:lang||"c"}).value
+        tempBlock=getHighlight(val,filename)
         size=(tempBlock.split("\n").length+"").length;
         for(i in tempBlock.split("\n")){
             str = padLeadingZeros(parseInt(i)+1,size);
@@ -70,4 +70,11 @@ function padLeadingZeros(num, size) {
     var s = num+"";
     while (s.length < size) s = "0" + s;
     return s;
+}
+function getHighlight(code,filename){
+    if(filename.includes(".")){
+        return hljs.highlight(code,{language:filename.split(".")[filename.split(".").length-1]}).value;
+    }else{
+        return code;
+    }
 }
