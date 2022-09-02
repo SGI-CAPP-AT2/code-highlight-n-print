@@ -7,4 +7,4 @@ Download `tool` directory and use the tool
 
 <hr>
 
-Goto [tool](tool/)
+Goto [tool](tool/) or [site:tool](http://sgi-capp-at2.github.io/code-highlight-n-print/tool)
