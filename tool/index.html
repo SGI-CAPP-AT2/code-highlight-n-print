@@ -7,7 +7,7 @@
     <title>v2.1.0 : code-highlight-n-print/tool</title>
     <link rel="stylesheet" href="ss/style.css">
     <link rel="stylesheet" href="ss/hljs.highlight.css">
-    <link rel="stylesheet" href="ss/uikit.min.css">
+    <link rel="stylesheet" href="ss/ui.css">
 </head>
 <body>
     <script>
@@ -25,6 +25,7 @@
         }
         let changeFileName=(newName)=>{
             $("span.filename").innerText=newName;
+            render($("textarea#input").value,'ip')
         }
         var changeImageInput = (value) =>{
             console.log(value)
@@ -35,7 +36,17 @@
             }
         }
     </script>
-    <input class="uk-input fn" oninput="changeFileName(this.value)" placeholder="filename" id="filename"/>
+    <div class="menubar">
+        <span>v 3.2.1</span>&ThickSpace;
+        <div class="a">
+        <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/issues/new" target="_blank">feedback</a>
+        <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/" target="_blank">github</a>
+        <a href="https://github.com/SGI-CAPP-AT2/" target="_blank">ShGI</a>
+        <a href="../guide.md">(?)guide</a>
+        </div>
+    </div>
+    <div style="height:20px"></div>
+    <input class="uk-input fn" oninput="changeFileName(this.value)" placeholder="filename with extension" id="filename"/>
     <textarea class="uk-textarea" id="input"
         placeholder="Enter Code ..."
         oninput="render(this.value,'ip')"
@@ -68,7 +79,7 @@
             </span>
         </p>
     </div>
-    <div>
+    <div class="controls">
     <button onclick="copyToClipboard(this)" class="copy">
         Copy
     </button>
@@ -80,13 +91,7 @@
     </button></div><br>
     <div class="queue"></div>
     <br>
-    <div class="menubar">
-        <span>v 3.2.1</span>&ThickSpace;
-        <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/issues/new" target="_blank">
-             Raise A issue
-        </a>&ThickSpace;<span>
-        fixed : preformatted code input</span>
-    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="ss/app.js"></script>
     <script src="ss/printer-queue.js"></script>

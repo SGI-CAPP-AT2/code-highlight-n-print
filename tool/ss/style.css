@@ -1,16 +1,14 @@
 html,body{
     margin: 0 !important;
-    padding: 0;
-    width: calc(100vw - 20px);
-    padding-top: 10px;display: flex;flex-direction: column;
+    padding: 0;display: flex;flex-direction: column;
 }
-textarea,input{
+textarea,input,select{
     resize: vertical;
     max-height: 60vh;
     outline: none;
     border: 1px dashed red;
-    margin: auto 3px !important;
-    width: calc(100vw - 12px);
+    margin: auto 8px !important;
+    width: calc(100vw - 24px);
 }
 *{
     font-family: monospace;

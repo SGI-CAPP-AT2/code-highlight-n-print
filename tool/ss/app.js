@@ -37,9 +37,10 @@ function getHighlight(code,filename){
         try{
         code = hljs.highlight(code,{language:filename.split(".")[filename.split(".").length-1]}).value;
         }catch(e){
-        code = code;
+        code = code.replaceAll("<","&lt;");
         }
         return code;
     }
+        code = code.replaceAll("<","&lt;");
         return code;
 }

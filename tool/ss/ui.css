@@ -1,0 +1,37 @@
+input,textarea,select,button{
+    border: 1px dashed black;
+    margin-top: 8px !important; 
+    background-color: transparent;
+}
+input:focus,textarea:focus,select:focus{
+    border: 1px solid black; 
+    box-shadow: 0 0 0 2.5px rgba(0, 0, 0, 0.193);
+}
+textarea{
+    height: 100px;
+}
+*{
+    outline: none;
+}
+::-webkit-scrollbar{
+    width: 2px;
+}
+.menubar{
+    width: 100vw;
+    position: fixed;
+    top: 0;
+}
+.menubar{
+    display: flex;
+    padding: 0 3px;
+}
+.menubar .a{
+    margin-left: auto;
+}
+.a a{
+    margin: 0 5px;
+}
+div.controls{
+    margin: auto;
+    margin-top: 20px;
+}
