@@ -2,7 +2,7 @@ var $ =q=> document.querySelector(q);
 window.onload=()=>{
     let list=[],tar = $("div.list");
     let n = parseInt(sessionStorage.list);
-    for(let i=0;i<n-1;i++){
+    for(let i=0;i<n;i++){
         list.push(JSON.parse(sessionStorage["l-"+i]));
         console.log(i)
     }
@@ -18,6 +18,7 @@ var getParam = (p) =>{
 },
 updateUIqueue = (list,tar) =>{
     let html="";
+    console.log(list)
     if(list.length!=0){
     list.forEach(cq=>{
         if(cq.rtfBool=="true"){rtfDisplay="inline"}else{rtfDisplay="none"}
@@ -47,7 +48,7 @@ updateUIqueue = (list,tar) =>{
         `
     })
     }else{
-        html="Nothing found in queue"
+        html="Nothing found in print list"
     }
     tar.innerHTML=html;
 },

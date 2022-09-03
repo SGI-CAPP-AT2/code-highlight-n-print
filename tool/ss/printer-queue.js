@@ -9,13 +9,9 @@ domObjects = {
     rtfBool:{value:()=>$("#rtf_bool").value}
 };
 function PRINT(){
-    let list = [...queue],
-    tmp = {};
-    Object.keys(domObjects).forEach(key=>{
-        tmp[key]=domObjects[key].value();
-    })
-    list.push(tmp);
+    let list = [...queue];
     let i = 0;
+    if(list.length!=0){
     list.forEach(el=>{
         sessionStorage["l-"+i++]=JSON.stringify(el);
     })
@@ -23,6 +19,9 @@ function PRINT(){
     window.location.assign(
         "print.html"
     )
+    }else{
+       show_message("nothing listed for print")
+    }
 }
 const addToQueue = () =>{
     let tmp = {};
@@ -64,6 +63,7 @@ updateUIqueue = () =>{
         </div>
         `
     })
+    show_message("Added "+queue[queue.length-1].filename+" to list successfully");
     }else{
         html="Noting found in queue"
     }

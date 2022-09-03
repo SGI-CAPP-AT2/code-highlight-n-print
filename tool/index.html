@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>v2.1.0 : code-highlight-n-print/tool</title>
+    <title>v 3.3.1: code-highlight-n-print/tool</title>
     <link rel="stylesheet" href="ss/style.css">
     <link rel="stylesheet" href="ss/hljs.highlight.css">
     <link rel="stylesheet" href="ss/ui.css">
@@ -35,9 +35,16 @@
                 $(".imageOutput").style.display="none"
             }
         }
+        var show_message = (msg) =>{
+            $(".msg").innerText=msg;
+            $(".msg").classList.add("shown");
+            setTimeout(ev=>{
+                $(".msg").classList.remove("shown");
+            },5000)
+        }
     </script>
     <div class="menubar">
-        <span>v 3.2.1</span>&ThickSpace;
+        <span>v 3.3.1</span>&ThickSpace;
         <div class="a">
         <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/issues/new" target="_blank">feedback</a>
         <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/" target="_blank">github</a>
@@ -63,6 +70,16 @@
             true
         </option>
     </select></label>
+    <div class="controls">
+        <button onclick="copyToClipboard(this)" class="copy">
+            Copy
+        </button>
+        <button onclick="PRINT()" class="copy">
+            Print 
+        </button>
+        <button onclick="addToQueue()">
+            List
+        </button></div>
     <div class="outputBlock" style="margin-top:10px">
         <p class="filenames">
             <span class="filename">Arithmetic.cpp</span>
@@ -79,16 +96,8 @@
             </span>
         </p>
     </div>
-    <div class="controls">
-    <button onclick="copyToClipboard(this)" class="copy">
-        Copy
-    </button>
-    <button onclick="PRINT()" class="copy">
-        Print 
-    </button>
-    <button onclick="addToQueue()">
-        Queue
-    </button></div><br>
+    <br>
+    <div class="msg"></div>
     <div class="queue"></div>
     <br>
     

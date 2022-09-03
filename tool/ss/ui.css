@@ -1,9 +1,9 @@
-input,textarea,select,button{
+input,textarea,select,button,div.msg{
     border: 1px dashed black;
     margin-top: 8px !important; 
     background-color: transparent;
 }
-input:focus,textarea:focus,select:focus{
+input:focus,textarea:focus,select:focus,.wm span:focus{
     border: 1px solid black; 
     box-shadow: 0 0 0 2.5px rgba(0, 0, 0, 0.193);
 }
@@ -34,4 +34,27 @@ textarea{
 div.controls{
     margin: auto;
     margin-top: 20px;
+}
+.wm span{
+    color: rgb(85, 85, 85);
+}
+div.msg{
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 8px;
+}
+div.msg.shown{
+    animation: pop 500ms;
+    display: block;
+    padding: 2px;
+    background-color: aliceblue;
+}
+@keyframes pop {
+    from{
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
 }
