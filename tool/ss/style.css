@@ -1,15 +1,16 @@
 html,body{
     margin: 0 !important;
     padding: 0;
-    padding-top: 10px;
+    width: calc(100vw - 20px);
+    padding-top: 10px;display: flex;flex-direction: column;
 }
 textarea,input{
-    width: calc(100vw - 32px);
     resize: vertical;
     max-height: 60vh;
     outline: none;
     border: 1px dashed red;
-    margin: 0 3px;
+    margin: auto 3px !important;
+    width: calc(100vw - 12px);
 }
 *{
     font-family: monospace;
@@ -19,7 +20,7 @@ textarea,input{
     resize: both;
 }
 p{
-    margin: 0;
+    margin: 0 !important;
     border-left: 5px solid black;
     border-right: 1px solid black;
 }
@@ -54,7 +55,7 @@ span.filename{
 .img img{
     max-width: calc(100% - 20px);
 }
-p.output{
+p.output *{
  white-space: pre;   
 }
 div.menubar{
@@ -66,4 +67,7 @@ div.menubar *{
 }
 @media print {
     .list .outputBlock{page-break-after: always;}
+}
+pre{
+    margin: 0;
 }

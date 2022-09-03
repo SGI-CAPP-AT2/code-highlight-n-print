@@ -6,7 +6,7 @@ render=(val, type)=>{
         size=(tempBlock.split("\n").length+"").length;
         for(i in tempBlock.split("\n")){
             str = padLeadingZeros(parseInt(i)+1,size);
-            htmlLine=str+". "+tempBlock.split("\n")[i]+"<br>";
+            htmlLine=str+". "+tempBlock.split("\n")[i]+"<br/>";
             htmlBlock+=htmlLine;
         }
         $("p.input").innerHTML=htmlBlock;
@@ -34,8 +34,12 @@ function padLeadingZeros(num, size) {
 }
 function getHighlight(code,filename){
     if(filename.includes(".")){
-        return hljs.highlight(code,{language:filename.split(".")[filename.split(".").length-1]}).value;
-    }else{
+        try{
+        code = hljs.highlight(code,{language:filename.split(".")[filename.split(".").length-1]}).value;
+        }catch(e){
+        code = code;
+        }
         return code;
     }
+        return code;
 }

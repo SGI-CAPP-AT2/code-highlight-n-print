@@ -10,9 +10,6 @@ window.onload=()=>{
     updateUIqueue(list,tar);
     print();
 }
-window.onafterprint=p=>{
-    window.location.assign("index.html")
-}
 var getParam = (p) =>{
     let urlParams = new URLSearchParams(window.location.search),
     product = urlParams.get(p);
