@@ -58,3 +58,7 @@ div.msg.shown{
         transform: scaleX(1);
     }
 }
+h3{
+    margin: auto;
+    width: 60vw;
+}

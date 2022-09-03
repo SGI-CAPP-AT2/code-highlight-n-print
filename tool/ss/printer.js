@@ -8,6 +8,11 @@ window.onload=()=>{
     }
     console.log(list)
     updateUIqueue(list,tar);
+    let pbBool = getParam("pb");
+    if(pbBool=='true'){
+        $("div.list").classList.add("list-pb");
+        console.log("page breaks added")
+    }
     print();
 }
 var getParam = (p) =>{

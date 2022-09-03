@@ -16,8 +16,10 @@ function PRINT(){
         sessionStorage["l-"+i++]=JSON.stringify(el);
     })
     sessionStorage.list=i;
+    let pbVal = $("select#p_b_p").value;
+    console.log(pbVal)
     window.location.assign(
-        "print.html"
+        "print.html?pb="+pbVal
     )
     }else{
        show_message("nothing listed for print")
@@ -29,6 +31,7 @@ const addToQueue = () =>{
     Object.keys(domObjects).forEach(key=>{
         tmp[key]=domObjects[key].value()
     })
+    tmp.title=queue.length+1+". "+tmp.title;
     queue.push(tmp);
     updateUIqueue();
 },

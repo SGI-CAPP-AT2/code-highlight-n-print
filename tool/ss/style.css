@@ -64,7 +64,7 @@ div.menubar *{
     color: aliceblue;
 }
 @media print {
-    .list .outputBlock{page-break-after: always;}
+    .list-pb .outputBlock{page-break-after: always;}
 }
 pre{
     margin: 0;
