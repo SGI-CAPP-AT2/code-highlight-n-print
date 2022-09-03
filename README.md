@@ -27,3 +27,6 @@ Recent fixes
 - changed ui (new) 030922
 - fixed listing error for print (new) 030922
 - Added preformatted support for code block (old)
+## Sample outputs
+- [OUTPUT by paste](OUTPUTS/paste.output.docx)
+- [OUTPUT by print](OUTPUTS/print.output.pdf)
