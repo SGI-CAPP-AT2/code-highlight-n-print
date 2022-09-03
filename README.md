@@ -3,11 +3,11 @@ A code highlighter for microsoft word and print code problems with there code, o
 
 <hr>
 
-Download `tool` directory and use the tool
+Download [`tool`](https://github.com/SGI-CAPP-AT2/code-highlight-n-print/tree/main/tool) directory and use the tool
 
-<hr>
+OR 
 
-Goto [tool](tool/) or [site:tool](http://sgi-capp-at2.github.io/code-highlight-n-print/tool)
+Goto [tool](https://github.com/SGI-CAPP-AT2/code-highlight-n-print/tree/main/tool) or [site:tool](http://sgi-capp-at2.github.io/code-highlight-n-print/tool)
 
 ## Description of project
 
