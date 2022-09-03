@@ -24,4 +24,6 @@ This project is helpful for all college students wants to attach their physical 
 ### Created by <img src="https://avatars.githubusercontent.com/u/77089227?s=40&v=4" height="20px"/> [ShGI](https://github.com/SGI-CAPP-AT2)
 
 Recent fixes
-- Added preformatted support for code block
+- changed ui (new) 030922
+- fixed listing error for print (new) 030922
+- Added preformatted support for code block (old)
