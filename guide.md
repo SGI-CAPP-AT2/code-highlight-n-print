@@ -16,3 +16,9 @@ first list your current code to printing `list` and then click `print`
 click on copy ![image](https://user-images.githubusercontent.com/77089227/188266163-d6063f02-dd89-47f9-881b-f8ca4a1aced8.png) and then paste (`ctrl+v`) in word processor
 
 ![image](https://user-images.githubusercontent.com/77089227/188266202-aa28c01a-0d88-46ec-ba5a-7719cdb9e15f.png)
+
+## Nothing found in list error
+![image](https://user-images.githubusercontent.com/77089227/188266375-00e5fde0-4be9-4e07-ba3d-86c2e595f162.png)
+When you're trying to open https://sgi-capp-at2.github.io/code-highlight-n-print/tool/print.html without listing in current browser session then error is thrown
+### without listing
+print list is `NULL`
