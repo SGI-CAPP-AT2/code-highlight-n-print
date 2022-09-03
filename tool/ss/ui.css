@@ -3,7 +3,7 @@ input,textarea,select,button,div.msg{
     margin-top: 8px !important; 
     background-color: transparent;
 }
-input:focus,textarea:focus,select:focus,.wm span:focus{
+input:focus,textarea:focus,select:focus,.wm span:focus,button:focus{
     border: 1px solid black; 
     box-shadow: 0 0 0 2.5px rgba(0, 0, 0, 0.193);
 }
