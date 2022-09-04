@@ -13,7 +13,7 @@ textarea{
 *{
     outline: none;
 }
-::-webkit-scrollbar{
+:not(.queue)::-webkit-scrollbar{
     width: 2px;
 }
 .menubar{
@@ -61,4 +61,14 @@ div.msg.shown{
 h3{
     margin: auto;
     width: 60vw;
+}
+div.queue{
+    overflow-x: scroll;
+}
+div#list{
+    display: flex;
+}
+.outputBlock p.input{
+    inline-size: 100%;
+    overflow-wrap: break-word;
 }

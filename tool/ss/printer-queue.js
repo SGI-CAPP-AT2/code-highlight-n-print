@@ -37,11 +37,10 @@ const addToQueue = () =>{
 },
 updateUIqueue = () =>{
     let html="",rtfDisplay;
-    $("div.queue").innerHTML="";
     if(queue.length!=0){
     queue.forEach(cq=>{
         if(cq.rtfBool=="true"){rtfDisplay="inline"}else{rtfDisplay="none"}
-        html+=`
+        html+=`<div style="margin:0 20px;">
         <h3>
         ${cq.title}
         </h3>
@@ -63,14 +62,14 @@ updateUIqueue = () =>{
             ${cq.watermark}
             </span>
         </p>
-        </div>
+        </div></div>
         `
     })
     show_message("Added "+queue[queue.length-1].filename+" to list successfully");
     }else{
         html="Noting found in queue"
     }
-    $("div.queue").innerHTML=html;
+    $("div.queue #list").innerHTML=html;
 },
 sendCodeHighlight=(val,lang)=>{
     let htmlBlock="",htmlLine,tempBlock;
