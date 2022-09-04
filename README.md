@@ -21,7 +21,7 @@ This project is helpful for all college students wants to attach their physical 
 - output and code have different blocks
 - can even watermark your number
 
-### Created by <img src="https://avatars.githubusercontent.com/u/77089227?s=40&v=4" height="20px"/> [ShGI](https://github.com/SGI-CAPP-AT2)
+### Created by [![SGI-CAPP-AT2](https://avatars.githubusercontent.com/u/77089227?s=20&v=4) ShGI](https://github.com/SGI-CAPP-AT2)
 
 Recent fixes
 - changed ui (new) 030922

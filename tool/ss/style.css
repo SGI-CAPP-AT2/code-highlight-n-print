@@ -69,3 +69,6 @@ div.menubar *{
 pre{
     margin: 0;
 }
+p.input,p.output{
+    white-space: pre;
+}

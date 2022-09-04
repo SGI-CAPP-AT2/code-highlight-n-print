@@ -69,6 +69,5 @@ div#list{
     display: flex;
 }
 .outputBlock p.input{
-    inline-size: 100%;
     overflow-wrap: break-word;
 }

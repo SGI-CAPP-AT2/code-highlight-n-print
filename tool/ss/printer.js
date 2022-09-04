@@ -26,6 +26,7 @@ updateUIqueue = (list,tar) =>{
     console.log(list)
     if(list.length!=0){
     list.forEach(cq=>{
+        console.log(cq.filename)
         if(cq.rtfBool=="true"){rtfDisplay="inline"}else{rtfDisplay="none"}
         html+=`
         <h3>
@@ -35,9 +36,7 @@ updateUIqueue = (list,tar) =>{
         <p class="filenames">
             <span class="filename">${cq.filename}</span>
         </p>
-        <p class="input">
-        ${sendCodeHighlight(cq.code,cq.filename)}
-        </p>
+        <p class="input">${sendCodeHighlight(cq.code,cq.filename)}</p>
         <p class="output">${cq.output}</p>
         <p align="center" class="img">
             <span style="display: ${rtfDisplay};" class="imageOutput">
@@ -76,8 +75,14 @@ function padLeadingZeros(num, size) {
 }
 function getHighlight(code,filename){
     if(filename.includes(".")){
-        return hljs.highlight(code,{language:filename.split(".")[filename.split(".").length-1]}).value;
-    }else{
+        try{
+        code = hljs.highlight(code,{language:filename.split(".")[filename.split(".").length-1]}).value;
+        }catch(e){
+        code = code.replaceAll("<","&lt;");
+        }
+        console.log(code)
         return code;
     }
+        code = code.replaceAll("<","&lt;");
+        return code;
 }
