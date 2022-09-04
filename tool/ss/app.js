@@ -44,3 +44,44 @@ function getHighlight(code,filename){
         code = code.replaceAll("<","&lt;");
         return code;
 }
+var checkURL = val =>{
+    if(isValidUrl(val)==true){
+        $("#fetch").style.display="block";
+    }else{
+        $("#fetch").style.display="none";
+    }
+}
+var insertCode = url =>{
+    $("textarea#input").disabled=true;
+    try{
+    fetch(url).then(obj=>obj.text()).then(val=>{
+        $("textarea#input").value=val;
+        $("textarea#input").disabled=false;
+    })
+    }catch(e){
+    show_message("error while fetch");
+    $("textarea#input").disabled=false;
+    }
+    let i = 0 ;
+    inv = setInterval(ev=>{
+        if(i%6==0&&i>100){
+            show_message(i+"s waiting and operation will abort at 100s");
+        }
+        if(i==102){
+            inv.clearInterval();
+            show_message("error while fetch");
+            $("textarea#input").disabled=false;
+        }
+        i++;
+    },1000)
+
+}
+const isValidUrl = urlString=> {
+    var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
+  '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // validate domain name
+  '((\\d{1,3}\\.){3}\\d{1,3}))'+ // validate OR ip (v4) address
+  '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // validate port and path
+  '(\\?[;&a-z\\d%_.~+=-]*)?'+ // validate query string
+  '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
+return !!urlPattern.test(urlString);
+}

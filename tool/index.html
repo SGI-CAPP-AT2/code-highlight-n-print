@@ -53,7 +53,8 @@
         </div>
     </div>
     <div style="height:20px"></div>
-    <input class="uk-input fn" oninput="changeFileName(this.value)" placeholder="filename with extension" id="filename"/>
+    <input class="uk-input fn" oninput="changeFileName(this.value);checkURL(this.value)" placeholder="filename with extension" id="filename"/>
+    <input onclick="insertCode($('input#filename').value)" style="max-width:150px ;display: none;" type="button" id="fetch" value="click to fetch"/>
     <textarea class="uk-textarea" id="input"
         placeholder="Enter Code ..."
         oninput="render(this.value,'ip')"
