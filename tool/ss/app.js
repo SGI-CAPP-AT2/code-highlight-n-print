@@ -57,6 +57,7 @@ var insertCode = url =>{
     fp.then(obj=>obj.text()).then(val=>{
         $("textarea#input").value=val;
         $("textarea#input").disabled=false;
+        render($("textarea#input").value,'ip')
     })
     fp.catch(e=>{
     show_message("error while fetch");
