@@ -53,27 +53,15 @@ var checkURL = val =>{
 }
 var insertCode = url =>{
     $("textarea#input").disabled=true;
-    try{
-    fetch(url).then(obj=>obj.text()).then(val=>{
+    let fp = fetch(url);
+    fp.then(obj=>obj.text()).then(val=>{
         $("textarea#input").value=val;
         $("textarea#input").disabled=false;
     })
-    }catch(e){
+    fp.catch(e=>{
     show_message("error while fetch");
     $("textarea#input").disabled=false;
-    }
-    let i = 0 ;
-    inv = setInterval(ev=>{
-        if(i%6==0&&i>100){
-            show_message(i+"s waiting and operation will abort at 100s");
-        }
-        if(i==102){
-            inv.clearInterval();
-            show_message("error while fetch");
-            $("textarea#input").disabled=false;
-        }
-        i++;
-    },1000)
+    });
 
 }
 const isValidUrl = urlString=> {
