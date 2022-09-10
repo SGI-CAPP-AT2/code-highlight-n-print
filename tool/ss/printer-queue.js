@@ -31,7 +31,7 @@ const addToQueue = () =>{
     Object.keys(domObjects).forEach(key=>{
         tmp[key]=domObjects[key].value()
     })
-    tmp.title="* "+tmp.title;
+    tmp.title="(.)) "+tmp.title;
     queue.push(tmp);
     updateUIqueue();
 },
@@ -45,9 +45,7 @@ updateUIqueue = () =>{
         ${cq.title}
         </h3>
         <div class="outputBlock" style="margin-top:10px">
-        <p class="filenames">
-            <span class="filename">${cq.filename}</span>
-        </p>
+        <p class="filenames"><span class="filename">${cq.filename}</span></p>
         <p class="input">${sendCodeHighlight(cq.code,cq.filename)}</p>
         <p class="output">${cq.output}</p>
         <p align="center" class="img">
@@ -75,7 +73,7 @@ sendCodeHighlight=(val,lang)=>{
         size=(tempBlock.split("\n").length+"").length;
         for(i in tempBlock.split("\n")){
             str = "<span class='ln'>"+padLeadingZeros(parseInt(i)+1,size)+"</span>";
-            htmlLine=str+". "+tempBlock.split("\n")[i]+"<br>";
+            htmlLine=str+tempBlock.split("\n")[i]+"<br>";
             htmlBlock+=htmlLine;
         }
         return htmlBlock;
