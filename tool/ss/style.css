@@ -69,10 +69,17 @@ div.menubar *{
 pre{
     margin: 0;
 }
-p.input,p.output{
+p.input,p.output,p.filenames{
     white-space: pre-wrap;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word; 
+    font-size: large;
+}
+span.ln{
+    background-color: white;
+    margin-right: 10px;
+    border-right: 1px solid black;
+    user-select: none;
 }

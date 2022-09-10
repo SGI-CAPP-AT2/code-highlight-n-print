@@ -33,9 +33,7 @@ updateUIqueue = (list,tar) =>{
         ${cq.title}
         </h3>
         <div class="outputBlock" style="margin-top:10px">
-        <p class="filenames">
-            <span class="filename">${cq.filename}</span>
-        </p>
+        <p class="filenames"><span class="filename">${cq.filename}</span></p>
         <p class="input">${sendCodeHighlight(cq.code,cq.filename)}</p>
         <p class="output">${cq.output}</p>
         <p align="center" class="img">
@@ -61,8 +59,8 @@ sendCodeHighlight=(val,filename)=>{
         tempBlock=getHighlight(val,filename)
         size=(tempBlock.split("\n").length+"").length;
         for(i in tempBlock.split("\n")){
-            str = padLeadingZeros(parseInt(i)+1,size);
-            htmlLine=str+". "+tempBlock.split("\n")[i]+"<br>";
+            str = "<span class='ln'>"+padLeadingZeros(parseInt(i)+1,size)+"</span>";
+            htmlLine=str+tempBlock.split("\n")[i]+"<br>";
             htmlBlock+=htmlLine;
         }
         return htmlBlock;

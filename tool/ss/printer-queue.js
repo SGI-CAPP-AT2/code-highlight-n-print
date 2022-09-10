@@ -31,7 +31,7 @@ const addToQueue = () =>{
     Object.keys(domObjects).forEach(key=>{
         tmp[key]=domObjects[key].value()
     })
-    tmp.title=queue.length+1+". "+tmp.title;
+    tmp.title="* "+tmp.title;
     queue.push(tmp);
     updateUIqueue();
 },
@@ -74,7 +74,7 @@ sendCodeHighlight=(val,lang)=>{
         tempBlock=getHighlight(val,lang)
         size=(tempBlock.split("\n").length+"").length;
         for(i in tempBlock.split("\n")){
-            str = padLeadingZeros(parseInt(i)+1,size);
+            str = "<span class='ln'>"+padLeadingZeros(parseInt(i)+1,size)+"</span>";
             htmlLine=str+". "+tempBlock.split("\n")[i]+"<br>";
             htmlBlock+=htmlLine;
         }
