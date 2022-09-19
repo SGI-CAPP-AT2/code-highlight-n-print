@@ -31,7 +31,7 @@ const addToQueue = () =>{
     Object.keys(domObjects).forEach(key=>{
         tmp[key]=domObjects[key].value()
     })
-    tmp.title="(.)) "+tmp.title;
+    tmp.title="• "+tmp.title;
     queue.push(tmp);
     updateUIqueue();
 },
