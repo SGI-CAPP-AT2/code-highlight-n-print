@@ -36,13 +36,18 @@ const addToQueue = () =>{
     updateUIqueue();
 },
 updateUIqueue = () =>{
-    let html="",rtfDisplay;
+    let html="",rtfDisplay,deleter=$("select#select_del");
+    deleter.disabled=true;
     if(queue.length!=0){
+    deleter.disabled=false;
+    let i = 0;
+    deleter.innerHTML="<option default>none</option>";
     queue.forEach(cq=>{
+        deleter.innerHTML+=`<option>${i+1}</option>`;
         if(cq.rtfBool=="true"){rtfDisplay="inline"}else{rtfDisplay="none"}
         html+=`<div style="margin:0 20px;">
         <h3>
-        ${cq.title}
+        ${++i}.${cq.title}
         </h3>
         <div class="outputBlock" style="margin-top:10px">
         <p class="filenames"><span class="filename">${cq.filename}</span></p>
@@ -63,9 +68,17 @@ updateUIqueue = () =>{
     })
     show_message("Added "+queue[queue.length-1].filename+" to list successfully");
     }else{
-        html="Noting found in queue"
+        html="Nothing found in queue"
     }
     $("div.queue #list").innerHTML=html;
+},
+del = index =>{
+    if(index!="none")
+    {
+    queue.splice(index-1,1);
+    console.log(queue);
+    updateUIqueue();
+    }
 },
 sendCodeHighlight=(val,lang)=>{
     let htmlBlock="",htmlLine,tempBlock;
