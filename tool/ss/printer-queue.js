@@ -36,11 +36,11 @@ const addToQueue = () =>{
     updateUIqueue();
 },
 updateUIqueue = () =>{
-    let html="",rtfDisplay,deleter=$("select#select_del");
+    let html="",rtfDisplay,deleter=$("select#select_del"),i;
     deleter.disabled=true;
     if(queue.length!=0){
     deleter.disabled=false;
-    let i = 0;
+    i = 0;
     deleter.innerHTML="<option default>none</option>";
     queue.forEach(cq=>{
         deleter.innerHTML+=`<option>${i+1}</option>`;

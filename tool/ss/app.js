@@ -1,93 +1,76 @@
-let queue = [],
-domObjects = {
-    title:{value:()=>$("input.optionaltext").value},
-    code:{value:()=>$("textarea#input").value},
-    output:{value:()=>$("textarea.input_of_op").value},
-    filename:{value:()=>$("input#filename").value},
-    rtf:{value:()=>$("#rtf_op span").innerHTML},
-    watermark:{value:()=>$("#wm span").innerHTML},
-    rtfBool:{value:()=>$("#rtf_bool").value}
-};
-function PRINT(){
-    let list = [...queue];
-    let i = 0;
-    if(list.length!=0){
-    list.forEach(el=>{
-        sessionStorage["l-"+i++]=JSON.stringify(el);
-    })
-    sessionStorage.list=i;
-    let pbVal = $("select#p_b_p").value;
-    console.log(pbVal)
-    window.location.assign(
-        "print.html?pb="+pbVal
-    )
-    }else{
-       show_message("nothing listed for print")
-    }
-}
-const addToQueue = () =>{
-    let tmp = {};
-    
-    Object.keys(domObjects).forEach(key=>{
-        tmp[key]=domObjects[key].value()
-    })
-    tmp.title="• "+tmp.title;
-    queue.push(tmp);
-    updateUIqueue();
-},
-updateUIqueue = () =>{
-    let html="",rtfDisplay,deleter=$("select#select_del");
-    deleter.disabled=true;
-    if(queue.length!=0){
-    deleter.disabled=false;
-    let i = 0;
-    deleter.innerHTML="<option default>none</option>";
-    queue.forEach(cq=>{
-        deleter.innerHTML+=`<option>${i+1}</option>`;
-        if(cq.rtfBool=="true"){rtfDisplay="inline"}else{rtfDisplay="none"}
-        html+=`<div style="margin:0 20px;">
-        <h3>
-        ${++i}.${cq.title}
-        </h3>
-        <div class="outputBlock" style="margin-top:10px">
-        <p class="filenames"><span class="filename">${cq.filename}</span></p>
-        <p class="input">${sendCodeHighlight(cq.code,cq.filename)}</p>
-        <p class="output">${cq.output}</p>
-        <p align="center" class="img">
-            <span style="display: ${rtfDisplay};" class="imageOutput">
-            ${cq.rtf}
-            </span>
-        </p>
-        <p class="wm" align="right">
-            <span>
-            ${cq.watermark}
-            </span>
-        </p>
-        </div></div>
-        `
-    })
-    show_message("Added "+queue[queue.length-1].filename+" to list successfully");
-    }else{
-        html="Nothing found in queue"
-    }
-    $("div.queue #list").innerHTML=html;
-},
-del = index =>{
-    if(index!="none")
-    {
-    queue.splice(index-1,1);
-    console.log(queue);
-    updateUIqueue();
-    }
-},
-sendCodeHighlight=(val,lang)=>{
+var input,output,
+render=(val, type)=>{
     let htmlBlock="",htmlLine,tempBlock;
-        tempBlock=getHighlight(val,lang)
+    if(type=="ip"){
+        tempBlock=getHighlight(val,$("span.filename").innerText)
         size=(tempBlock.split("\n").length+"").length;
         for(i in tempBlock.split("\n")){
-            str = "<span class='ln'>"+padLeadingZeros(parseInt(i)+1,size)+"</span>";
-            htmlLine=str+tempBlock.split("\n")[i]+"<br>";
+            str = padLeadingZeros(parseInt(i)+1,size);
+            htmlLine=str+". "+tempBlock.split("\n")[i]+"<br/>";
             htmlBlock+=htmlLine;
         }
-        return htmlBlock;
+        $("p.input").innerHTML=htmlBlock;
+    }else{
+        $("p.output").innerText=val;
+    }
+},
+copyToClipboard=(but)=>{
+    let range = new Range();
+    range.setStart($("div.outputBlock"), 0);
+    range.setEnd($("div.outputBlock"),10);
+    document.getSelection().removeAllRanges();
+    document.getSelection().addRange(range);
+    document.execCommand('copy');
+    document.getSelection().removeAllRanges();
+    but.innerText="copied";
+    setTimeout(e=>{
+        but.innerText="Copy"
+    },1000)
 };
+function padLeadingZeros(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
+function getHighlight(code,filename){
+    if(filename.includes(".")){
+        try{
+        code = hljs.highlight(code,{language:filename.split(".")[filename.split(".").length-1]}).value;
+        }catch(e){
+        code = code.replaceAll("<","&lt;");
+        }
+        return code;
+    }
+        code = code.replaceAll("<","&lt;");
+        return code;
+}
+var checkURL = val =>{
+    if(isValidUrl(val)==true){
+        $("#fetch").style.display="block";
+    }else{
+        $("#fetch").style.display="none";
+    }
+}
+var insertCode = url =>{
+    $("textarea#input").disabled=true;
+    let fp = fetch(url);
+    fp.then(obj=>obj.text()).then(val=>{
+        $("textarea#input").value=val;
+        $("textarea#input").disabled=false;
+        render($("textarea#input").value,'ip')
+    })
+    fp.catch(e=>{
+    show_message("error while fetch");
+    $("textarea#input").disabled=false;
+    });
+
+}
+const isValidUrl = urlString=> {
+    var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
+  '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // validate domain name
+  '((\\d{1,3}\\.){3}\\d{1,3}))'+ // validate OR ip (v4) address
+  '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // validate port and path
+  '(\\?[;&a-z\\d%_.~+=-]*)?'+ // validate query string
+  '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
+return !!urlPattern.test(urlString);
+}
