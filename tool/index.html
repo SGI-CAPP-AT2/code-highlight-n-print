@@ -65,19 +65,30 @@
     ></textarea>
     <input class="uk-input optionaltext" type="text" placeholder="Optional text for print title">
     <label style="margin: 3px;">Image Output
-    <select class="uk-select" onchange="changeImageInput(this.value)" name="Image Output" id="rtf_bool">
-        <option selected="selected" default value="false">false</option>
-        <option value="true">
-            true
-        </option>
-    </select></label>
+        <select class="uk-select" onchange="changeImageInput(this.value)" name="Image Output" id="rtf_bool">
+            <option selected="selected" default value="false">false</option>
+            <option value="true">
+                true
+            </option>
+        </select>
+    </label>
     <label style="margin: 3px;">Page Breaks in prints
         <select class="uk-select" id="p_b_p">
             <option default value="false">false</option>
             <option selected="selected" value="true">
                 true
             </option>
-        </select></label>
+        </select>
+    </label>
+    <strong>
+        Print list oprations
+    </strong>
+    <label class="oprations">
+            select index to delete from list
+            <select onchange="del(this.value)" disabled style="height: auto;" name="Delete index" id="select_del" >
+                <option default>none</option>
+            </select>
+    </label>
     <div class="controls">
         <button onclick="copyToClipboard(this)" class="copy">
             Copy
@@ -104,6 +115,7 @@
     </div>
     <br>
     <div class="msg"></div>
+    
     <div class="queue">
         <div id="list">
             
