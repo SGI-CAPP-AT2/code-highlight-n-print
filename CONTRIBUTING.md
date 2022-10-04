@@ -1,11 +1,12 @@
 # Contributing Guidelines 👨‍💻
 ## 👨‍💻 Prerequisite Skills to Contribute
+- [Html](https://www.w3schools.com/whatis/whatis_html.asp)
+- [Hljs](https://www.npmjs.com/package/hljs)
 
-### 💻 Contribute in public/Profile
+### 💻 Contribute in tool
 
 - [Git](https://git-scm.com/) 
 - [Basic JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [ReactJS](https://reactjs.org/docs/getting-started.html)
 
 ### 📄 Contribute in Documents
 
