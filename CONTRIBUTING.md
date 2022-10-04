@@ -1,5 +1,7 @@
 # Contributing Guidelines 👨‍💻
+
 ## 👨‍💻 Prerequisite Skills to Contribute
+
 - [Html](https://www.w3schools.com/whatis/whatis_html.asp)
 - [Hljs](https://www.npmjs.com/package/hljs)
 
