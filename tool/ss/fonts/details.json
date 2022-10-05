@@ -1,0 +1,17 @@
+[
+    {
+        "Title":"Segoe UI",
+        "ClassName":"segoeUI-fonts",
+        "css":"Segoe UI"
+    },
+    {
+        "Title":"MonoSpace",
+        "ClassName":"default-fonts",
+        "css":"monospace"
+    },
+    {
+        "Title":"Times New Roman",
+        "ClassName":"TimesNewRoman-fonts",
+        "css":"Times New Roman', Times, serif"
+    }
+]

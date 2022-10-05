@@ -7,7 +7,8 @@
     <title>v 3.3.1: code-highlight-n-print/tool</title>
     <link rel="stylesheet" href="ss/style.css">
     <link rel="stylesheet" href="ss/hljs.highlight.css">
-    <link rel="stylesheet" href="ss/ui.css">
+    <link rel="stylesheet" href="ss/ui.css">\
+    <link rel="stylesheet" href="ss/fonts/fonts.css">
 </head>
 <body>
     <script>
@@ -44,7 +45,7 @@
         }
     </script>
     <div class="menubar">
-        <span>v 3.3.1</span>&ThickSpace;
+        <span>v 3.4.1 (Added Font Customization ~ <i>ShGI</i>)</span>&ThickSpace;
         <div class="a">
         <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/issues/new" target="_blank">feedback</a>
         <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/" target="_blank">github</a>
@@ -52,7 +53,23 @@
         <a href="../guide">(?)guide</a>
         </div>
     </div>
-    <div style="height:20px"></div>
+    <a href="#settings-core" onclick="toggleSettings(this)" style="margin: 4px;">Settings</a>
+    <setting-section id="settings-core" style="display: none;margin-left: 4px;">
+        <h1 style="margin: 0;">
+            Settings
+        </h1>
+        <hr>
+        <strong style="margin-left:3px;">
+            Print list Fonts
+        </strong>
+        <label class="fontSelection operations">
+                select font to set from list
+                <select disabled id="fontList">
+                    <option style="font-family: monospace;" default>Loading Font List ...</option>
+                </select>
+        </label>
+        <hr>
+    </setting-section>
     <input class="uk-input fn" oninput="changeFileName(this.value);checkURL(this.value)" placeholder="filename with extension" id="filename"/>
     <input onclick="insertCode($('input#filename').value)" style="max-width:150px ;display: none;margin:auto" type="button" id="fetch" value="click to fetch"/>
     <textarea class="uk-textarea" id="input"
@@ -80,10 +97,10 @@
             </option>
         </select>
     </label>
-    <strong>
-        Print list oprations
+    <strong style="margin-left:3px;">
+        Print list operations
     </strong>
-    <label class="oprations">
+    <label class="operations">
             select index to delete from list
             <select onchange="del(this.value)" disabled style="height: auto;" name="Delete index" id="select_del" >
                 <option default>none</option>
@@ -122,7 +139,7 @@
         </div>
     </div>
     <br>
-    
+    <script src="ss/fonts/ui.fonts.js"></script>
     <script src="ss/highlight.min.js"></script>
     <script src="ss/app.js"></script>
     <script src="ss/printer-queue.js"></script>

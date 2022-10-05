@@ -74,3 +74,14 @@ const isValidUrl = urlString=> {
   '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
 return !!urlPattern.test(urlString);
 }
+var toggleSettings = (a) =>
+{
+    console.log(("setting-section"))
+    if($("#settings-core").style.display=="none"){
+        $("#settings-core").style.display="block"
+        a.innerText="Hide Settings"
+    }else{
+        $("#settings-core").style.display="none"
+        a.innerText="Settings"
+    }
+}

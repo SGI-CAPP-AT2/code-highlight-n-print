@@ -1,0 +1,9 @@
+.default-fonts *{
+    font-family: monospace;
+}
+.segoeUI-fonts *{
+    font-family: 'Segoe UI';
+}
+.TimesNewRoman-fonts *{
+    font-family: 'Times New Roman', Times, serif;
+}

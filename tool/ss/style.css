@@ -10,9 +10,6 @@ textarea,input,select{
     margin: auto 8px !important;
     width: calc(100vw - 24px);
 }
-*{
-    font-family: monospace;
-}
 .outputBlock{
     width: 60vw;
     resize: both;
@@ -58,10 +55,11 @@ p.output *{
 }
 div.menubar{
     display: flex;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px dashed black;
 }
 div.menubar *{
-    color: aliceblue;
+    color: rgb(0, 0, 0);
 }
 @media print {
     .list-pb .outputBlock{page-break-after: always;}
@@ -82,4 +80,7 @@ span.ln{
     margin-right: 10px;
     border-right: 1px solid black;
     user-select: none;
+}
+.operations{
+    margin-left:4px;
 }

@@ -47,6 +47,7 @@ updateUIqueue = (list,tar) =>{
             </span>
         </p>
         </div>
+        
         `
     })
     }else{
