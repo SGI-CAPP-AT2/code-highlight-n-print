@@ -1,6 +1,6 @@
 # ![/README assets/banner.png](https://github.com/SGI-CAPP-AT2/code-highlight-n-print/blob/main/README%20assets/banner.png?raw=true)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # code-highlight-n-print
@@ -47,6 +47,7 @@ Recent fixes
     <tr>
       <td align="center"><a href="https://jakebolam.com"><img src="https://avatars.githubusercontent.com/u/3534236?v=4?s=100" width="100px;" alt="Jake Bolam"/><br /><sub><b>Jake Bolam</b></sub></a><br /><a href="#infra-jakebolam" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/commits?author=jakebolam" title="Tests">⚠️</a> <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/commits?author=jakebolam" title="Code">💻</a></td>
       <td align="center"><a href="https://anshul-soni.vercel.app/"><img src="https://avatars.githubusercontent.com/u/74638335?v=4?s=100" width="100px;" alt="Anshul Soni"/><br /><sub><b>Anshul Soni</b></sub></a><br /><a href="#infra-anshulsoni4" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/commits?author=anshulsoni4" title="Tests">⚠️</a> <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/commits?author=anshulsoni4" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/SGI-CAPP-AT2"><img src="https://avatars.githubusercontent.com/u/77089227?v=4?s=100" width="100px;" alt="Shubham Ingale"/><br /><sub><b>Shubham Ingale</b></sub></a><br /><a href="#infra-SGI-CAPP-AT2" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/commits?author=SGI-CAPP-AT2" title="Tests">⚠️</a> <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/commits?author=SGI-CAPP-AT2" title="Code">💻</a></td>
     </tr>
   </tbody>
   <tfoot>
