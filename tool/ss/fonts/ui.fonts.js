@@ -1,21 +1,26 @@
 var
-defaultFont=()=>localStorage.defaultFont,
+font=()=>localStorage.setFont,
 fontDetails, 
 changeUiFonts=(val)=>
 {
-    document.body.classList.remove(defaultFont());
+    document.body.classList.remove(font());
     document.body.classList.add(val);
+    localStorage.setFont=val;
 },
 loadCallFonts=()=>
 {
     fetch("ss/fonts/details.json").then(tex=>tex.json()).then(json=>{
         fontDetails=json;
         optList="";
+        let fontFound=false;
         for(let detail of json){
-            console.log(detail)
-            optList+=`<option ${(detail.ClassName==localStorage.defaultFont)?"selected":""} style="font-family:${detail.css}" value="${detail.ClassName}">${detail.Title}</option>`
+            if(font()==detail.ClassName){
+                fontFound=true;
+            }
+            console.log(font()==detail.ClassName)
+            optList+=`<option ${(detail.ClassName==font())?"selected":""} style="font-family:${detail.css}" value="${detail.ClassName}">${detail.Title}</option>`
             console.log(
-                detail.ClassName==localStorage.defaultFont,
+                detail.ClassName==localStorage.setFont,
                 detail
             )
         }
@@ -23,13 +28,16 @@ loadCallFonts=()=>
         $("#fontList").disabled=false;
         $("#fontList").addEventListener("change",ev=>{
             changeUiFonts(ev.target.value)
-            localStorage.defaultFont=ev.target.value;
             console.log(ev.currentTarget.value)
         })
+        if(fontFound==false){
+            changeUiFonts("default-fonts");
+            console.log(fontFound)
+        }
     });
-    if(!localStorage.defaultFont){
-        localStorage.defaultFont="default-fonts";
+    if(!localStorage.setFont){
+        localStorage.setFont="default-fonts";
     }
-    document.body.classList.add(localStorage.defaultFont);
+    document.body.classList.add(localStorage.setFont);
 };
 window.addEventListener("load",lv=>loadCallFonts())

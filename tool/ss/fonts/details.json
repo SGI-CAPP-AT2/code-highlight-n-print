@@ -10,13 +10,8 @@
         "css":"monospace"
     },
     {
-        "Title":"Times New Roman",
-        "ClassName":"TimesNewRoman-fonts",
-        "css":"'Times New Roman', Times, serif"
-    },
-    {
-        "Title":"Oswald (Designed by Vernon Adams, Kalapi Gajjar, Cyreal) fonts.google.com",
-        "ClassName":"oswald-fonts",
-        "css":"'Oswald', sans-serif"
+        "Title":"Fira Code",
+        "ClassName":"FiraCode-google-fonts",
+        "css":"'Fira Code', monospace"
     }
 ]
