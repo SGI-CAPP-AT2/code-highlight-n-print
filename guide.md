@@ -12,6 +12,11 @@ to add watermark override previous watermark with your own ![image](https://user
 ## Print a pdf 
 ![image](https://user-images.githubusercontent.com/77089227/188266091-bd60176e-fa49-498b-b7f4-356e437a10f7.png)
 first list your current code to printing `list` and then click `print` 
+## Multiple font available 
+- Monospace 
+- Segoe UI 
+- Times New Roman 
+
 ## Paste code block in ms word
 click on copy ![image](https://user-images.githubusercontent.com/77089227/188266163-d6063f02-dd89-47f9-881b-f8ca4a1aced8.png) and then paste (`ctrl+v`) in word processor
 
