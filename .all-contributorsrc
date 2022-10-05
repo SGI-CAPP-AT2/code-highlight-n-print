@@ -27,6 +27,17 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "SGI-CAPP-AT2",
+      "name": "Shubham Ingale",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77089227?v=4",
+      "profile": "https://github.com/SGI-CAPP-AT2",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
