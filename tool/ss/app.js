@@ -79,7 +79,7 @@ var toggleSettings = (a) =>
     console.log(("setting-section"))
     if($("#settings-core").style.display=="none"){
         $("#settings-core").style.display="block"
-        a.innerText="Hide Settings"
+        a.innerText="Hide"
     }else{
         $("#settings-core").style.display="none"
         a.innerText="Settings"
