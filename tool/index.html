@@ -7,7 +7,7 @@
     <title>v 3.3.1: code-highlight-n-print/tool</title>
     <link rel="stylesheet" href="ss/style.css">
     <link rel="stylesheet" href="ss/hljs.highlight.css">
-    <link rel="stylesheet" href="ss/ui.css">\
+    <link rel="stylesheet" href="ss/ui.css">
     <link rel="stylesheet" href="ss/fonts/fonts.css">
 </head>
 <body>
@@ -47,28 +47,33 @@
     <div class="menubar">
         <span>v 3.4.1 (Added Font Customization ~ <i>ShGI</i>)</span>&ThickSpace;
         <div class="a">
+            <a href="#settings-core" onclick="toggleSettings(this)" style="margin: 4px;">Settings</a>
         <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/issues/new" target="_blank">feedback</a>
         <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/" target="_blank">github</a>
         <a href="https://github.com/SGI-CAPP-AT2/" target="_blank">ShGI</a>
         <a href="../guide">(?)guide</a>
         </div>
     </div>
-    <a href="#settings-core" onclick="toggleSettings(this)" style="margin: 4px;">Settings</a>
-    <setting-section id="settings-core" style="display: none;margin-left: 4px;">
-        <h1 style="margin: 0;">
+    <div id="margin-up"></div>
+    <script>
+        let _height = $("div.menubar").offsetHeight;
+        console.log(_height)
+        $("#margin-up").style.height=_height+"px";
+    </script>
+    <setting-section id="settings-core" style="display: none;">
+        <h2 style="margin: 0;">
             Settings
-        </h1>
+        </h2>
         <hr>
         <strong style="margin-left:3px;">
             Print list Fonts
-        </strong>
+        </strong><br>
         <label class="fontSelection operations">
-                select font to set from list
+                select font to set from list below
                 <select disabled id="fontList">
                     <option style="font-family: monospace;" default>Loading Font List ...</option>
                 </select>
         </label>
-        <hr>
     </setting-section>
     <input class="uk-input fn" oninput="changeFileName(this.value);checkURL(this.value)" placeholder="filename with extension" id="filename"/>
     <input onclick="insertCode($('input#filename').value)" style="max-width:150px ;display: none;margin:auto" type="button" id="fetch" value="click to fetch"/>

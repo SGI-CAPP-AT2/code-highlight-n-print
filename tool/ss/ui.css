@@ -71,3 +71,12 @@ div#list{
 .outputBlock p.input{
     overflow-wrap: break-word;
 }
+hr{
+    border: 0;
+    border-bottom: 1px dashed black;
+}
+setting-section{
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.143);
+    border-bottom: 1px solid black;
+    padding-bottom: 4px;
+}

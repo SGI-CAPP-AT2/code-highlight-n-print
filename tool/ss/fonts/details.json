@@ -12,6 +12,6 @@
     {
         "Title":"Times New Roman",
         "ClassName":"TimesNewRoman-fonts",
-        "css":"Times New Roman', Times, serif"
+        "css":"'Times New Roman', Times, serif"
     }
 ]
