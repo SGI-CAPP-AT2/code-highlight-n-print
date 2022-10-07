@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>v 3.3.1: code-highlight-n-print/tool</title>
+    <title>code-highlight-n-print/tool</title>
     <link rel="stylesheet" href="ss/style.css">
     <link rel="stylesheet" href="ss/hljs.highlight.css">
     <link rel="stylesheet" href="ss/ui.css">
@@ -56,9 +56,14 @@
     </div>
     <div id="margin-up"></div>
     <script>
-        let _height = $("div.menubar").clientHeight;
-        console.log(_height)
-        $("#margin-up").style.height=_height+"px";
+        var setSettingsMenu=()=>{
+            let _height = $("div.menubar").getBoundingClientRect().height;
+            console.log(_height)
+            $("#margin-up").style.height=_height+"px";
+        }
+        window.addEventListener("DOMContentLoaded",ev=>{
+            setSettingsMenu();
+        })
     </script>
     <setting-section id="settings-core" style="display: none;">
         <h2 style="margin: 0;">
@@ -73,6 +78,14 @@
                 <select disabled id="fontList">
                     <option style="font-family: monospace;" default>Loading Font List ...</option>
                 </select>
+        </label>
+        <hr>
+        <strong style="margin-left: 3px;">
+            Default watermark
+        </strong><br>
+        <label class="operations">
+                create a default watermark
+                <input oninput="changeDefaultWM(this.value)" id="watermark-or"/>
         </label>
     </setting-section>
     <input class="uk-input fn" oninput="changeFileName(this.value);checkURL(this.value)" placeholder="filename with extension" id="filename"/>

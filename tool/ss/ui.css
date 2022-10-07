@@ -74,6 +74,7 @@ div#list{
 hr{
     border: 0;
     border-bottom: 1px dashed black;
+    margin: 3px;
 }
 setting-section{
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.143);

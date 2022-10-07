@@ -84,4 +84,14 @@ var toggleSettings = (a) =>
         $("#settings-core").style.display="none"
         a.innerText="Settings"
     }
+},
+changeDefaultWM=newWM=>{
+    localStorage.defaultWatermark=newWM;
 }
+window.addEventListener("load",ev=>{
+    if(!localStorage.defaultWatermark){
+        localStorage.defaultWatermark="github:sgi-capp-at2/code-highlight-n-print";
+    }
+    $("p#wm span").innerHTML=localStorage.defaultWatermark;
+    $("#watermark-or").value=localStorage.defaultWatermark;
+})

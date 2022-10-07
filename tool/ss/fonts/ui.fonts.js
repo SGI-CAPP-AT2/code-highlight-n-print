@@ -38,6 +38,7 @@ loadCallFonts=()=>
     if(!localStorage.setFont){
         localStorage.setFont="default-fonts";
     }
-    document.body.classList.add(localStorage.setFont);
+    document.body.classList.add(localStorage.setFont);  
+    setSettingsMenu();
 };
 window.addEventListener("load",lv=>loadCallFonts())
