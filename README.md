@@ -11,8 +11,8 @@ A code highlighter for microsoft word and print code problems with there code, o
 # Getting Started
 
 <p align="center">
-  <a href="https://sgi-capp-at2.github.io/code-highlight-n-print/tool"> <img src="https://img.shields.io/badge/>-Go%20to%20tool-gray?style=social" /> </a><br>
-  <a href="https://sgi-capp-at2.github.io/code-highlight-n-print"> <img src="https://img.shields.io/badge/>-Go%20to%20site-white?style=social" /> </a>
+  <a href="https://sgi-capp-at2.github.io/code-highlight-n-print/tool"> <img src="https://img.shields.io/badge/Tool↗-Go%20to%20tool-gray?style=social" /> </a><br>
+  <a href="https://sgi-capp-at2.github.io/code-highlight-n-print"> <img src="https://img.shields.io/badge/site↗-Go%20to%20site-white?style=social" /> </a>
 </p>
 
 ## Description of project
