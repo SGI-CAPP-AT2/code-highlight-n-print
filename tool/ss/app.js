@@ -76,14 +76,16 @@ return !!urlPattern.test(urlString);
 }
 var toggleSettings = (a) =>
 {
+    if(!a)a={};
     console.log(("setting-section"))
     if($("#settings-core").style.display=="none"){
         $("#settings-core").style.display="block"
         a.innerText="Hide"
-    }else{
+        return "shown";
+    }
         $("#settings-core").style.display="none"
         a.innerText="Settings"
-    }
+        return "hidden"
 },
 changeDefaultWM=newWM=>{
     localStorage.defaultWatermark=newWM;
@@ -94,4 +96,21 @@ window.addEventListener("load",ev=>{
     }
     $("p#wm span").innerHTML=localStorage.defaultWatermark;
     $("#watermark-or").value=localStorage.defaultWatermark;
+})
+var focusSettingUrl = (setting_id) =>
+{
+    let isShown = toggleSettings();
+    if(isShown!="shown"){toggleSettings();}
+    $("#"+setting_id).style.borderBottom="5px dashed red";
+    setTimeout(e=>{
+        $("#"+setting_id).style.borderBottom="";
+    },5000)
+}
+// get window param and focus the setting
+window.addEventListener("load",e=>{
+    const urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('hl_st'))
+    {
+        focusSettingUrl(urlParams.get('hl_st'))
+    }
 })

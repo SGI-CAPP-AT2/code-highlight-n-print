@@ -47,7 +47,7 @@
     <div class="menubar">
         <span><i>&lt;/&gt;</i> highlight n print</span>&ThickSpace;
         <div class="a">
-        <a href="#" onclick="toggleSettings(this)" style="margin: 4px;">Settings</a>
+        <a href="#" onclick="toggleSettings(this)" id="settinga" style="margin: 4px;">Settings</a>
         <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/issues/new" target="_blank">feedback</a>
         <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print/" target="_blank">github</a>
         <a href="https://github.com/SGI-CAPP-AT2/" target="_blank">ShGI</a>
@@ -70,7 +70,7 @@
             Settings
         </h2>
         <hr>
-        <strong style="margin-left:3px;">
+        <strong id="set_def_font" style="margin-left:3px;">
             Print list Fonts
         </strong><br>
         <label class="fontSelection operations">
@@ -80,7 +80,7 @@
                 </select>
         </label>
         <hr>
-        <strong style="margin-left: 3px;">
+        <strong id="set_def_wm" style="margin-left: 3px;">
             Default watermark
         </strong><br>
         <label class="operations">
