@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Inconsolata:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Inconsolata:wght@500&display=swap');
 .default-fonts *{
     font-family: monospace;
 }
 .segoeUI-fonts *{
     font-family: 'Segoe UI';
 }
-.FiraCode-google-fonts *{
-    font-family: 'Fira Code';
-}
 .inconsolata-google-fonts *{
     font-family: 'Inconsolata';
+}
+.gemunuLibre-google-fonts *{
+    font-family: 'Gemunu Libre';
 }

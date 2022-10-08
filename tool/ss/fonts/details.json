@@ -10,13 +10,13 @@
         "css":"monospace"
     },
     {
-        "Title":"Fira Code",
-        "ClassName":"FiraCode-google-fonts",
-        "css":"'Fira Code'"
-    },
-    {
         "Title":"Inconsolata",
         "ClassName":"inconsolata-google-fonts",
         "css":"'Inconsolata'"
+    },
+    {
+        "Title":"Gemunu Libre (Designed by Mooniak)",
+        "ClassName":"gemunuLibre-google-fonts",
+        "css":"'Gemunu Libre'"
     }
 ]
