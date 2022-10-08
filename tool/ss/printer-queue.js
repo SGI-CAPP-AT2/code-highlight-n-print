@@ -1,4 +1,5 @@
 let queue = [],
+// All inputs
 domObjects = {
     title:{value:()=>$("input.optionaltext").value},
     code:{value:()=>$("textarea#input").value},
@@ -8,6 +9,7 @@ domObjects = {
     watermark:{value:()=>$("#wm span").innerHTML},
     rtfBool:{value:()=>$("#rtf_bool").value}
 };
+// Print 
 function PRINT(){
     let list = [...queue];
     let i = 0;
@@ -25,6 +27,7 @@ function PRINT(){
        show_message("nothing listed for print")
     }
 }
+// Add current inputs to queue
 const addToQueue = () =>{
     let tmp = {};
     
@@ -35,6 +38,7 @@ const addToQueue = () =>{
     queue.push(tmp);
     updateUIqueue();
 },
+// Show list in UI
 updateUIqueue = () =>{
     let html="",rtfDisplay,deleter=$("select#select_del"),i;
     deleter.disabled=true;
@@ -72,6 +76,7 @@ updateUIqueue = () =>{
     }
     $("div.queue #list").innerHTML=html;
 },
+// Delete a queue from list using @index
 del = index =>{
     if(index!="none")
     {
@@ -80,6 +85,7 @@ del = index =>{
     updateUIqueue();
     }
 },
+// Get highlighted HTml Block
 sendCodeHighlight=(val,lang)=>{
     let htmlBlock="",htmlLine,tempBlock;
         tempBlock=getHighlight(val,lang)

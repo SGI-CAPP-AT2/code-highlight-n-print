@@ -51,6 +51,7 @@ var checkURL = val =>{
         $("#fetch").style.display="none";
     }
 }
+// insert fetched code
 var insertCode = url =>{
     $("textarea#input").disabled=true;
     let fp = fetch(url);
@@ -65,6 +66,7 @@ var insertCode = url =>{
     });
 
 }
+// validating url
 const isValidUrl = urlString=> {
     var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
   '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // validate domain name
@@ -74,6 +76,7 @@ const isValidUrl = urlString=> {
   '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
 return !!urlPattern.test(urlString);
 }
+// toggle settings menu show/hide
 var toggleSettings = (a) =>
 {
     if(!a)a={};
@@ -87,9 +90,11 @@ var toggleSettings = (a) =>
         a.innerText="Settings"
         return "hidden"
 },
+// create Default watermark
 changeDefaultWM=newWM=>{
     localStorage.defaultWatermark=newWM;
 }
+// set default Watermark
 window.addEventListener("load",ev=>{
     if(!localStorage.defaultWatermark){
         localStorage.defaultWatermark="github:sgi-capp-at2/code-highlight-n-print";
@@ -97,6 +102,7 @@ window.addEventListener("load",ev=>{
     $("p#wm span").innerHTML=localStorage.defaultWatermark;
     $("#watermark-or").value=localStorage.defaultWatermark;
 })
+// Focus if settings url exist
 var focusSettingUrl = (setting_id) =>
 {
     let isShown = toggleSettings();
@@ -112,5 +118,9 @@ window.addEventListener("load",e=>{
     if(urlParams.has('hl_st'))
     {
         focusSettingUrl(urlParams.get('hl_st'))
+    }
+    const isSaved = localStorage._savedCache_inputs;
+    if(isSaved==true){
+        fillCachedInputs()
     }
 })
