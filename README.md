@@ -11,8 +11,8 @@ A code highlighter for microsoft word and print code problems with there code, o
 # Getting Started
 
 <p align="center">
-  <a href="https://sgi-capp-at2.github.io/code-highlight-n-print/tool"> <img src="https://img.shields.io/badge/>-Go%20to%20tool-gray?style=social" /> </a><br>
-  <a href="https://sgi-capp-at2.github.io/code-highlight-n-print"> <img src="https://img.shields.io/badge/>-Go%20to%20site-white?style=social" /> </a>
+  <a href="https://sgi-capp-at2.github.io/code-highlight-n-print/tool"> <img src="https://img.shields.io/badge/Tool↗-Go%20to%20tool-gray?style=social" /> </a><br>
+  <a href="https://sgi-capp-at2.github.io/code-highlight-n-print"> <img src="https://img.shields.io/badge/site↗-Go%20to%20site-white?style=social" /> </a>
 </p>
 
 ## Description of project
@@ -30,9 +30,9 @@ This project is helpful for all college students wants to attach their physical 
 ### Initiated by [![SGI-CAPP-AT2](https://avatars.githubusercontent.com/u/77089227?s=20&v=4) ShGI](https://github.com/SGI-CAPP-AT2)
 
 Recent fixes
-- changed ui (new) 030922
-- fixed listing error for print (new) 030922
-- Added preformatted support for code block (old)
+- Added Default Watermark (new) 071022
+- Added New Font `Inconsolata` (new) 071022
+- Added Font Customization (previous) 051022
 ## Sample outputs
 - [OUTPUT by paste](OUTPUTS/paste.output.docx)
 - [OUTPUT by print](OUTPUTS/print.output.pdf)
