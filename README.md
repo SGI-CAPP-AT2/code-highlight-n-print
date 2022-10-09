@@ -4,8 +4,8 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # code-highlight-n-print
-A code highlighter for microsoft word and print code problems with there code, output, output graphics, title, filename and watermark
-
+- A code highlighter for microsoft word and print code problems with there code, output, output graphics, title, filename and watermark
+- A BnW Code highlighter for college submissions
 <hr>
 
 # Getting Started
