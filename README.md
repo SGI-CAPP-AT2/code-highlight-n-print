@@ -30,9 +30,10 @@ This project is helpful for all college students wants to attach their physical 
 ### Initiated by [![SGI-CAPP-AT2](https://avatars.githubusercontent.com/u/77089227?s=20&v=4) ShGI](https://github.com/SGI-CAPP-AT2)
 
 Recent fixes
-- Added Default Watermark (new) 071022
-- Added New Font `Inconsolata` (new) 071022
-- Added Font Customization (previous) 051022
+- Added Session Autosaves (new) 081022
+- Added Default Watermark (previous) 071022
+- Added New Font `Inconsolata` (previous) 071022
+- Added Font Customization (old) 051022
 ## Sample outputs
 - [OUTPUT by paste](OUTPUTS/paste.output.docx)
 - [OUTPUT by print](OUTPUTS/print.output.pdf)
