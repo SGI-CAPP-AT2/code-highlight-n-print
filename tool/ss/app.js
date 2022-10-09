@@ -165,7 +165,14 @@ var renderSessions = () =>{
     target.classList.add("sessionList");
 }
 var moveToSession = (id) =>{
-    try{
+    let all_sessions = JSON.parse(localStorage.sessionsList),flaggedFound,sessionName;
+    all_sessions.forEach(s=>{
+        if(s.sessionID==id){
+            flaggedFound=true;
+            sessionName=s.sessionName;
+        }
+    })
+    if(flaggedFound==true){
         Object.keys(domObjects).forEach(key=>{
             domObjects[key].setValue(localStorage[id+key])
         })
@@ -177,8 +184,12 @@ var moveToSession = (id) =>{
         }
         console.log(newQ,parseInt(localStorage[id+"-list"]))
         setQ(newQ);
-        show_message("Loaded session "+id)
-    }catch(e){
-        show_message("Can'Load Session");
+        $("#sessionName").disabled=true;
+        $("#sessionName").value=sessionName;
+        savedIsTrue(id);
+        show_message("Loaded session "+sessionName)
+    }else{
+        show_message("No Session with "+id+" ID found")
     }
+    
 }

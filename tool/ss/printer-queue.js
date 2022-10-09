@@ -177,3 +177,7 @@ var saveRecent = () =>{
         }
     }
 };
+var savedIsTrue = (id) =>{
+    SavedCurrent=true;
+    sessionID=id;
+}
