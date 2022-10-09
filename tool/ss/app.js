@@ -139,7 +139,12 @@ var showSessions = (button) =>{
     }
 }
 var renderSessions = () =>{
-    let sessionList = JSON.parse(localStorage.sessionsList);
+    let sessionList;
+    try{
+    sessionList = JSON.parse(localStorage.sessionsList);
+    }catch(e){
+    sessionList = [];
+    }
     target=document.createElement("ul");
     sessionList.forEach(session=>{
         let holder = document.createElement("li");
@@ -154,20 +159,26 @@ var renderSessions = () =>{
         target.append(holder);
     });
     $("sessions-saved").append(target);
+    if(sessionList.length<1){
+        target.innerText="No session Records found"
+    }
     target.classList.add("sessionList");
 }
 var moveToSession = (id) =>{
-    show_message("Loading session "+id)
-    Object.keys(domObjects).forEach(key=>{
-        domObjects[key].setValue(localStorage[id+key])
-    })
-    let newQ = [];
-    for(let i=0;i<parseInt(localStorage[id+"-list"]);i++)
-    {
-        newQ.push(JSON.parse(localStorage[id+"-l-"+i]));
-        console.log(localStorage[id+"-l-"+i])
+    try{
+        Object.keys(domObjects).forEach(key=>{
+            domObjects[key].setValue(localStorage[id+key])
+        })
+        let newQ = [];
+        for(let i=0;i<parseInt(localStorage[id+"-list"]);i++)
+        {
+            newQ.push(JSON.parse(localStorage[id+"-l-"+i]));
+            console.log(localStorage[id+"-l-"+i])
+        }
+        console.log(newQ,parseInt(localStorage[id+"-list"]))
+        setQ(newQ);
+        show_message("Loaded session "+id)
+    }catch(e){
+        show_message("Can'Load Session");
     }
-    console.log(newQ,parseInt(localStorage[id+"-list"]))
-    setQ(newQ);
-    show_message("Loaded session "+id)
 }
