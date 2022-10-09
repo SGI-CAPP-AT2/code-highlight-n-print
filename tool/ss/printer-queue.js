@@ -1,14 +1,53 @@
 let queue = [],
 // All inputs
 domObjects = {
-    title:{value:()=>$("input.optionaltext").value},
-    code:{value:()=>$("textarea#input").value},
-    output:{value:()=>$("textarea.input_of_op").value},
-    filename:{value:()=>$("input#filename").value},
-    rtf:{value:()=>$("#rtf_op span").innerHTML},
-    watermark:{value:()=>$("#wm span").innerHTML},
-    rtfBool:{value:()=>$("#rtf_bool").value}
+    title:{
+        value:()=>$("input.optionaltext").value,
+        setValue:nV=>{
+            $("input.optionaltext").value=nV;
+        }
+    },
+    code:{
+        value:()=>$("textarea#input").value,
+        setValue:nV=>{
+            $("textarea#input").value=nV;
+        }
+    },
+    output:{
+        value:()=>$("textarea.input_of_op").value,
+        setValue:nV=>{
+            $("textarea.input_of_op").value=nV;
+        }
+    },
+    filename:{
+        value:()=>$("input#filename").value,
+        setValue:nV=>{
+            $("input#filename").value=nV;
+        }
+    },
+    rtf:{
+        value:()=>$("#rtf_op span").innerHTML,
+        setValue:nV=>{
+            $("#rtf_op span").innerHTML=nV;
+        }
+    },
+    watermark:{
+        value:()=>$("#wm span").innerHTML,
+        setValue:nV=>{
+            $("#wm span").innerText=nV;
+        }
+    },
+    rtfBool:{
+        value:()=>$("#rtf_bool").value,
+        setValue:nV=>{
+            $("#rtf_bool").value=nV;
+        }
+    }
 };
+function setQ(array){
+    queue=array;
+    updateUIqueue();
+}
 // Print 
 function PRINT(){
     let list = [...queue];
@@ -37,6 +76,7 @@ const addToQueue = () =>{
     tmp.title="• "+tmp.title;
     queue.push(tmp);
     updateUIqueue();
+    saveRecent();
 },
 // Show list in UI
 updateUIqueue = () =>{
@@ -96,4 +136,44 @@ sendCodeHighlight=(val,lang)=>{
             htmlBlock+=htmlLine;
         }
         return htmlBlock;
+};
+// Load recent session 
+var SavedCurrent;
+var addToSessionsList = (json) =>{
+    let list;
+    try{
+        list=JSON.parse(localStorage.sessionsList);
+    }catch(e){
+        list=[];
+    }
+    list.push(json);
+    localStorage.sessionsList=JSON.stringify(list);
+    localStorage.sessionsSaved=list.length;
+}
+let sessionID;
+var saveRecent = () =>{
+    if(sessionStorage.autoSave=="true"){
+        if(!sessionID){
+            sessionID = $("#sessionName").value+(localStorage.sessionsList||" ").length;
+        }
+        let list = [...queue];
+        let i = 0;
+        if(list.length!=0){
+            list.forEach(el=>{
+                localStorage[sessionID+"-l-"+i++]=JSON.stringify(el);
+            })
+            localStorage[sessionID+"-list"]=i;
+        }
+        Object.keys(domObjects).forEach(key=>{
+            localStorage[sessionID+key]=domObjects[key].value()
+        })
+        if(SavedCurrent!=true){
+            addToSessionsList({
+                sessionID:sessionID,
+                sessionName:$("#sessionName").value,
+                sessionAt:Date.now()
+            })
+            SavedCurrent=true;
+        }
+    }
 };

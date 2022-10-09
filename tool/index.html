@@ -86,31 +86,34 @@
         <label class="operations">
                 create a default watermark
                 <input oninput="changeDefaultWM(this.value)" id="watermark-or"/>
+        </label><hr>
+        <strong id="set_Cache" style="margin-left:3px;">
+            Load Sessions
+        </strong><br>
+        <label class="SaveCache operations">
+            Load Recent Saved Sessions 
+            <button onclick="showSessions(this)">Load</button>
         </label>
     </setting-section>
-    <input class="uk-input fn" oninput="changeFileName(this.value);checkURL(this.value)" placeholder="filename with extension" id="filename"/>
+    <sessions-saved style="display: none;">
+    </sessions-saved>
+    <input type="text" placeholder="session name " id="sessionName">
+    <small style="margin-left: 8px;"><a href="javascript:enableSessionAutosave()">click</a> to enable autosave for this session  <a href="../learn-more-data-save-cache">learn more</a></small>
+    <input class="uk-input fn" oninput="changeFileName(this.value);checkURL(this.value);saveRecent()" placeholder="filename with extension" id="filename"/>
     <input onclick="insertCode($('input#filename').value)" style="max-width:150px ;display: none;margin:auto" type="button" id="fetch" value="click to fetch"/>
     <textarea class="uk-textarea" id="input"
         placeholder="Enter Code ..."
-        oninput="render(this.value,'ip')"
+        oninput="render(this.value,'ip');saveRecent()"
     ></textarea>
     <textarea class="uk-textarea input_of_op"
         placeholder="Enter output ..."
-        oninput="render(this.value,'op')"
+        oninput="render(this.value,'op');saveRecent()"
     ></textarea>
-    <input class="uk-input optionaltext" type="text" placeholder="Optional text for print title">
+    <input class="uk-input optionaltext" type="text" placeholder="Optional text for print title" oninput="saveRecent()">
     <label style="margin: 3px;">Image Output
-        <select class="uk-select" onchange="changeImageInput(this.value)" name="Image Output" id="rtf_bool">
+        <select class="uk-select" onchange="changeImageInput(this.value);saveRecent()" name="Image Output" id="rtf_bool">
             <option selected="selected" default value="false">false</option>
             <option value="true">
-                true
-            </option>
-        </select>
-    </label>
-    <label style="margin: 3px;">Page Breaks in prints
-        <select class="uk-select" id="p_b_p">
-            <option default value="false">false</option>
-            <option selected="selected" value="true">
                 true
             </option>
         </select>
@@ -123,6 +126,14 @@
             <select onchange="del(this.value)" disabled style="height: auto;" name="Delete index" id="select_del" >
                 <option default>none</option>
             </select>
+    </label>
+    <label style="margin: 3px;">Page Breaks in prints
+        <select class="uk-select" id="p_b_p">
+            <option default value="false">false</option>
+            <option selected="selected" value="true">
+                true
+            </option>
+        </select>
     </label>
     <div class="controls">
         <button onclick="copyToClipboard(this)" class="copy">
@@ -139,7 +150,7 @@
         <p class="input">Highlighted code</p>
         <p class="output">Printed</p>
         <p align="center" class="img" id="rtf_op">
-            <span style="display: none;" class="imageOutput" contenteditable="true">
+            <span style="display: none;" oninput="saveRecent()" class="imageOutput" contenteditable="true">
             Paste Your Image Here</span>
         </p>
         <p class="wm" id="wm" align="right">

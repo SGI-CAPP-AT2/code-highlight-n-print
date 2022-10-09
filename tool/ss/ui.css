@@ -76,8 +76,30 @@ hr{
     border-bottom: 1px dashed black;
     margin: 3px;
 }
-setting-section{
+setting-section,sessions-saved{
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.143);
     border-bottom: 1px solid black;
     padding-bottom: 4px;
+}
+a[href]:active{
+    color: black;
+}
+ul.sessionList{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul.sessionList li{
+    display: flex;
+    padding: 5px;
+    border-bottom: 1px dashed black;
+}
+ul.sessionList li .sessionName{
+    margin: 0;
+}
+ul.sessionList li .sessionDate{
+    margin: auto;
+}
+ul.sessionList li .sessionLink{
+    margin-left: auto;
 }

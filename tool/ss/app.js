@@ -113,14 +113,61 @@ var focusSettingUrl = (setting_id) =>
     },5000)
 }
 // get window param and focus the setting
+// get session param & move to session
 window.addEventListener("load",e=>{
     const urlParams = new URLSearchParams(window.location.search);
     if(urlParams.has('hl_st'))
     {
         focusSettingUrl(urlParams.get('hl_st'))
     }
-    const isSaved = localStorage._savedCache_inputs;
-    if(isSaved==true){
-        fillCachedInputs()
+    renderSessions();
+    if(urlParams.has('loadSession')){
+        moveToSession(urlParams.get('loadSession'))
     }
 })
+var enableSessionAutosave = () =>{
+    sessionStorage.autoSave = true;
+    $("#sessionName").disabled=true;
+}
+var showSessions = (button) =>{
+    if($("sessions-saved").style.display=="none"){
+        $("sessions-saved").style.display="block";
+        button.innerText="Hide";
+    }else{
+        $("sessions-saved").style.display="none";
+        button.innerText="Show";
+    }
+}
+var renderSessions = () =>{
+    let sessionList = JSON.parse(localStorage.sessionsList);
+    target=document.createElement("ul");
+    sessionList.forEach(session=>{
+        let holder = document.createElement("li");
+        let date = new Date(session.sessionAt);
+        holder.innerHTML=`
+        <div class="sessionName">${session.sessionName}</div>
+        <div class="sessionDate">${date.toLocaleString()}</div>
+        <div class="sessionLink">
+            <a href='?loadSession=${session.sessionID}'>Load</a>
+        </div>
+        `
+        target.append(holder);
+    });
+    $("sessions-saved").append(target);
+    target.classList.add("sessionList");
+}
+var moveToSession = (id) =>{
+    show_message("Loading session "+id)
+    Object.keys(domObjects).forEach(key=>{
+        domObjects[key].setValue(localStorage[id+key])
+    })
+    let newQ = [];
+    for(let i=0;i<parseInt(localStorage[id+"-list"]);i++)
+    {
+        newQ.push(JSON.parse(localStorage[id+"-l-"+i]));
+        console.log(localStorage[id+"-l-"+i])
+    }
+    console.log(newQ,parseInt(localStorage[id+"-list"]))
+    setQ(newQ);
+    show_message("Loaded session "+id)
+}
