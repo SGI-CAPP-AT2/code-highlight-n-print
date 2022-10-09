@@ -124,6 +124,9 @@ window.addEventListener("load",e=>{
     if(urlParams.has('loadSession')){
         moveToSession(urlParams.get('loadSession'))
     }
+    if(urlParams.has('DeleteSession')){
+        deleteSession(urlParams.get('DeleteSession'))
+    }
 })
 var enableSessionAutosave = () =>{
     sessionStorage.autoSave = true;
@@ -146,6 +149,7 @@ var renderSessions = () =>{
     sessionList = [];
     }
     target=document.createElement("ul");
+    $("sessions-saved").innerHTML=""
     sessionList.forEach(session=>{
         let holder = document.createElement("li");
         let date = new Date(session.sessionAt);
@@ -154,6 +158,8 @@ var renderSessions = () =>{
         <div class="sessionDate">${date.toLocaleString()}</div>
         <div class="sessionLink">
             <a href='?loadSession=${session.sessionID}'>Load</a>
+            | 
+            <a href='?DeleteSession=${session.sessionID}'>Delete</a>
         </div>
         `
         target.append(holder);
@@ -191,5 +197,26 @@ var moveToSession = (id) =>{
     }else{
         show_message("No Session with "+id+" ID found")
     }
-    
+}
+var deleteSession = (id) =>{
+    let all_s = JSON.parse(localStorage.sessionsList);
+    for(let i=0;i<all_s.length;i++)
+    {
+        let session=all_s[i];
+        if(session.sessionID==id){
+            console.log(id)
+            all_s.splice(i,1);
+            show_message("Deleted Session with id: "+session.sessionID+", Name: "+session.sessionName+", Init: "+session.sessionAt);
+            Object.keys(domObjects).forEach(key=>{
+                localStorage.removeItem(id+key)
+            })
+            for(let i=0;i<parseInt(localStorage[id+"-list"]);i++)
+            {
+                localStorage.removeItem(id+"-l-"+i);
+            }
+            localStorage.removeItem(id+"-list");
+        }
+    }
+    localStorage.sessionsList=JSON.stringify(all_s);
+    renderSessions();
 }
