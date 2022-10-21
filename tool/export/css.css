@@ -1,0 +1,15 @@
+.session_info{
+    margin: auto;
+    border: 1px dashed black;
+}
+.field{
+    border-bottom: 1px dashed black;
+}
+.nano-field .val{
+    color: grey;
+}
+hr{
+    margin: 0;
+    border: 0;
+    border-bottom: 1px dashed rgb(159, 159, 159);
+}

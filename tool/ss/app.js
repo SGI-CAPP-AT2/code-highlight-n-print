@@ -158,7 +158,9 @@ var renderSessions = () =>{
         <div class="sessionDate">${date.toLocaleString()}</div>
         <div class="sessionLink">
             <a href='?loadSession=${session.sessionID}'>Load</a>
-            | 
+            |
+            <button onclick="downloadSession('${session.sessionID}')" data-id="${session.sessionID}">Download</button>
+            |
             <a href='?DeleteSession=${session.sessionID}'>Delete</a>
         </div>
         `
@@ -219,4 +221,9 @@ var deleteSession = (id) =>{
     }
     localStorage.sessionsList=JSON.stringify(all_s);
     renderSessions();
+}
+var downloadSession = id =>
+{
+    sessionStorage.export=id;
+    location.assign("export")
 }

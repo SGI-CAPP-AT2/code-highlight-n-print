@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPORT SESSION: code highlight n print</title>
+    <link rel="stylesheet" href="../ss/fonts/fonts.css">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <h1>
+        Export Confirmation
+    </h1>
+    <div class="session_info">
+        <div class="field" id="name">
+            <span class="key">Name: </span><span class="val">Loading...</span>
+        </div>
+        <div class="nano-field" id="time">
+            <span class="key">time: </span><span class="val">Loading...</span>
+        </div>
+        <div class="nano-field" id="id">
+            <span class="key">ID: </span><span class="val">Loading...</span>
+        </div>
+        <hr>
+        <div class="nano-field" id="exportType">
+            <span class="key">Export Type: </span><span class="val">JSON</span>
+        </div>
+        <div class="nano-field" id="size">
+            <span class="key">Download Size (Estimated): </span><span class="val">Calculating...</span>
+        </div>
+        <hr>
+        <div class="nano-field" id="download">
+            <span class="key">Download: </span>
+            <span class="val">
+                Waiting ...
+            </span>
+        </div>
+        <hr>
+        <div class="nano-field" id="preview">
+            <span class="key">Downloading preview: </span><br>
+            <span class="val">
+                <a href="javascript:loadPreview()">Load</a>
+            </span>
+        </div>
+    </div>
+    <script>
+        document.body.classList.add(localStorage.setFont);
+    </script>
+    <script src="downloader.js"></script>
+</body>
+</html>
