@@ -34,7 +34,15 @@ updateUIElements = (session,url) => {
     let date = new Date();
     domObjects.time.innerText=date.toLocaleString(parseInt(session.sessionAt))
     domObjects.id.innerText=session.sessionID;
-    domObjects.prev.innerText=(JSON.stringify(sessionJSON))
+    let prevStr="",i=0;
+    while(i<1024){
+        prevStr+=(JSON.stringify(sessionJSON))[i]
+        i++;
+    }
+    domObjects.prev.innerText=prevStr
+    domObjects.prev.innerHTML+=`
+        <a style="text-decoration:none;" href='${url}'>...</a>
+    `
     domObjects.size.innerText=(byteCounts(JSON.stringify(sessionJSON))/(1024)+'') + ' kb';
     let a = document.createElement("a");
     a.href=url;
