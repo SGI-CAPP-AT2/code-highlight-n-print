@@ -93,6 +93,11 @@
         <label class="SaveCache operations">
             Load Recent Saved Sessions 
             <button onclick="showSessions(this)">Load</button>
+        </label><br><br>
+        <label class="SaveCache operations">
+            Load Sessions <code>chnp-session-json</code>
+            <span style="border: 1px dashed black;padding: 1px;">Upload</span>
+            <input multiple accept=".chnp-session-json" style="display: none;" onchange="importSession(this)" type="file">
         </label>
     </setting-section>
     <sessions-saved style="display: none;">
@@ -168,6 +173,12 @@
         </div>
     </div>
     <br>
+    <div style="display: NONE;" class="upload-progress">
+        <div class="main">
+            <h1>Uploader</h1>
+            <span class="perc"></span>
+        </div>
+    </div>
     <script src="ss/fonts/ui.fonts.js"></script>
     <script src="ss/highlight.min.js"></script>
     <script src="ss/app.js"></script>

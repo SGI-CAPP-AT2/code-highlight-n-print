@@ -103,3 +103,18 @@ ul.sessionList li .sessionDate{
 ul.sessionList li .sessionLink{
     margin-left: auto;
 }
+div.upload-progress{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    background: #fff;
+}
+div.upload-progress div.main{
+    width: 100%;
+}
+div.upload-progress div.main ul{
+    list-style: none;
+}

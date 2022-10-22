@@ -26,6 +26,8 @@ var exporter = (session) =>{
         console.log(localStorage[id+"-l-"+i])
     }
     sessionJSON.printList=newQ;
+    sessionJSON.name=session.sessionName;
+    sessionJSON.time=session.sessionAt;
     let url = getObjectString(JSON.stringify(sessionJSON))
     updateUIElements(session,url);
 },
@@ -34,15 +36,22 @@ updateUIElements = (session,url) => {
     let date = new Date();
     domObjects.time.innerText=date.toLocaleString(parseInt(session.sessionAt))
     domObjects.id.innerText=session.sessionID;
-    let prevStr="",i=0;
+    let prevStr="",i=0,needOfReadMore;
     while(i<1024){
-        prevStr+=(JSON.stringify(sessionJSON))[i]
+        if((JSON.stringify(sessionJSON))[i]){
+            prevStr+=(JSON.stringify(sessionJSON))[i]
+        }else{
+            needOfReadMore=false;
+        }
         i++;
     }
+    
     domObjects.prev.innerText=prevStr
-    domObjects.prev.innerHTML+=`
-        <a style="text-decoration:none;" href='${url}'>...</a>
-    `
+    if(needOfReadMore!=false){
+        domObjects.prev.innerHTML+=`
+            <a style="text-decoration:none;" href='${url}'>...</a>
+        `
+    }
     domObjects.size.innerText=(byteCounts(JSON.stringify(sessionJSON))/(1024)+'') + ' kb';
     let a = document.createElement("a");
     a.href=url;

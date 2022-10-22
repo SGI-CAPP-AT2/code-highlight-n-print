@@ -227,3 +227,46 @@ var downloadSession = id =>
     sessionStorage.export=id;
     location.assign("export")
 }
+let uploads = 0;
+var importSession = inp =>
+{
+    $(".upload-progress").style.display="block";
+    uploads=inp.files.length;
+    for(file of inp.files)
+    {
+        console.log(file)
+        let reader = new FileReader()
+        reader.onload=saveAsSession
+        reader.readAsText(file)
+    }
+},
+cur=0,
+saveAsSession = text =>
+{
+    let sessionJSON = JSON.parse(text.target.result);
+    saveToLocalStorage(sessionJSON);
+    cur++;
+    $(".upload-progress .main span.perc").innerHTML=`${cur}/${uploads} = ${cur/uploads*100}% Completed <br> waiting for reload`;
+    setTimeout(e=>{location.reload()},1200)
+},
+saveToLocalStorage=(json)=>{
+    let len;
+    try{len=localStorage.sessionsList.length}catch(e){len=0}
+    let sessionID = json.name+len,list=json.printList;
+    for(key of Object.keys(json.inputValues)){
+        localStorage[sessionID+key]=json.inputValues[key]
+    }
+    let i = 0;
+    if(list.length!=0){
+        list.forEach(el=>{
+            localStorage[sessionID+"-l-"+i++]=JSON.stringify(el);
+        })
+        localStorage[sessionID+"-list"]=i;
+    }
+    console.log(json)
+    addToSessionsList({
+        sessionID:sessionID,
+        sessionName:json.name,
+        sessionAt:json.time
+    })
+};

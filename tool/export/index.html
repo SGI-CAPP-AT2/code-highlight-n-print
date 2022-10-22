@@ -22,6 +22,11 @@
         <div class="nano-field" id="id">
             <span class="key">ID: </span><span class="val">Loading...</span>
         </div>
+        <div class="nano-field">
+            <span class="val">
+                Note: ID will vary device to device
+            </span>
+        </div>
         <hr>
         <div class="nano-field" id="exportType">
             <span class="key">Export Type: </span><span class="val">JSON</span>
@@ -46,6 +51,9 @@
     </div>
     <script>
         document.body.classList.add(localStorage.setFont);
+        if(!sessionStorage.export){
+            document.querySelector('h1').innerText="ERROR 404 NO session found";
+        }
     </script>
     <script src="downloader.js"></script>
 </body>
