@@ -33,8 +33,8 @@ var exporter = (session) =>{
 },
 updateUIElements = (session,url) => {
     domObjects.Name.innerText=session.sessionName;
-    let date = new Date();
-    domObjects.time.innerText=date.toLocaleString(parseInt(session.sessionAt))
+    let date = new Date(session.sessionAt);
+    domObjects.time.innerText=date.toLocaleString()
     domObjects.id.innerText=session.sessionID;
     let prevStr="",i=0,needOfReadMore;
     while(i<1024){
