@@ -4,9 +4,7 @@ window.onload=()=>{
     let n = parseInt(sessionStorage.list);
     for(let i=0;i<n;i++){
         list.push(JSON.parse(sessionStorage["l-"+i]));
-        console.log(i)
     }
-    console.log(list)
     updateUIqueue(list,tar);
     let pbBool = getParam("pb");
     if(pbBool=='true'){
@@ -18,7 +16,7 @@ window.onload=()=>{
 var getParam = (p) =>{
     let urlParams = new URLSearchParams(window.location.search),
     product = urlParams.get(p);
-    console.log(product,"pro")
+    console.log(p,product,"pro")
     return product;
 },
 updateUIqueue = (list,tar) =>{
@@ -47,8 +45,22 @@ updateUIqueue = (list,tar) =>{
             </span>
         </p>
         </div>
-        
         `
+        if(getParam("swm")=='true'){
+            html+=`
+            <div align="right" class="swm">
+                <span class="site-wm">
+                    <img src="ss/wm.svg" alt="Site WaterMark"/>
+                    <span>
+                        Formatted & Printed With 
+                        <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print">
+                            ShGI/code-highlight-n-print
+                        </a>
+                    </span>
+                </span>
+            </div>
+            `
+        }
     })
     }else{
         html="Nothing found in print list"

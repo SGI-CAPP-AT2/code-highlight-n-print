@@ -62,7 +62,7 @@ div.menubar *{
     color: rgb(0, 0, 0);
 }
 @media print {
-    .list-pb .outputBlock{page-break-after: always;}
+    .list-pb .site-wm{page-break-after: always;}
 }
 pre{
     margin: 0;
@@ -83,4 +83,25 @@ span.ln{
 }
 .operations{
     margin-left:4px;
+}
+.swm{
+    text-align: right;
+}
+.site-wm{
+    display: inline-flex;
+    vertical-align: middle;
+    margin: 10px 1px;
+    border: 1px dashed black;
+    font-size: 12px;
+}
+.site-wm span{
+    margin: auto 0;
+}
+.site-wm img{
+    height: 12px;
+    margin: 3px;
+}
+.site-wm a{
+    color: rgb(177, 177, 177);
+    text-decoration: none;
 }

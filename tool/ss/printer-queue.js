@@ -60,7 +60,7 @@ function PRINT(){
     let pbVal = $("select#p_b_p").value;
     console.log(pbVal)
     window.location.assign(
-        "print.html?pb="+pbVal
+        "print.html?pb="+pbVal+"&swm=true"
     )
     }else{
        show_message("nothing listed for print")

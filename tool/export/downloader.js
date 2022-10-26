@@ -45,7 +45,6 @@ updateUIElements = (session,url) => {
         }
         i++;
     }
-    
     domObjects.prev.innerText=prevStr
     if(needOfReadMore!=false){
         domObjects.prev.innerHTML+=`
