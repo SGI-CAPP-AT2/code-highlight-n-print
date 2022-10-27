@@ -62,7 +62,7 @@ div.menubar *{
     color: rgb(0, 0, 0);
 }
 @media print {
-    .list-pb .site-wm{page-break-after: always;}
+    .list-pb .swm{page-break-after: always;}
 }
 pre{
     margin: 0;

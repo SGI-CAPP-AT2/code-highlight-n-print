@@ -60,6 +60,8 @@ updateUIqueue = (list,tar) =>{
                 </span>
             </div>
             `
+        }else{
+            html+="<div class='swm'></div>"
         }
     })
     }else{
