@@ -22,6 +22,10 @@ p{
 p.output,.wm{
     border-right: 1px solid black;
 }
+p.op-header{
+    border-top: 1px solid black;
+    border-bottom: 1px dashed black;
+}
 p.wm{
     font-size: 14px;
     color: rgb(0, 0, 0) !important;
@@ -31,7 +35,7 @@ p.filenames{
     border-top: 1px solid black;
     border-bottom: 1px dashed black;
 }
-p:not(.input,.filenames){
+p:not(.input,.filenames,.op-header){
     background-color: rgb(219, 219, 219);
     color: rgb(0, 0, 0);
 }
@@ -80,6 +84,7 @@ span.ln{
     margin-right: 10px;
     border-right: 1px solid black;
     user-select: none;
+    padding: 0 2px;
 }
 .operations{
     margin-left:4px;

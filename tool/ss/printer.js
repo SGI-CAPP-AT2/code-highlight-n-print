@@ -35,6 +35,7 @@ updateUIqueue = (list) =>{
         <div class="outputBlock" style="margin-top:10px">
         <p class="filenames"><span class="filename">${cq.filename}</span></p>
         <p class="input">${sendCodeHighlight(cq.code,cq.filename)}</p>
+        <p class="op-header">Output</p>
         <p class="output">${cq.output}</p>
         <p align="center" class="img">
             <span style="display: ${rtfDisplay};" class="imageOutput">
