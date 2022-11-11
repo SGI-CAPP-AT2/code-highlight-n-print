@@ -102,6 +102,6 @@ span.ln{
     margin: 3px;
 }
 .site-wm a{
-    color: rgb(177, 177, 177);
-    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
 }
