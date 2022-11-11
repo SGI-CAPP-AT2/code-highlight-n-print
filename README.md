@@ -5,7 +5,7 @@
 
 # code-highlight-n-print
 - A code highlighter for microsoft word and print code problems with there code, output, output graphics, title, filename and watermark
-- A BnW Code highlighter for college submissions
+- A BnW Code highlighter for hard copy of docs
 <hr>
 
 # Getting Started
@@ -21,7 +21,8 @@ This project is helpful for all college students wants to attach their physical 
 
 ## Features
 
-- Black & white code highlighting saves your money for printing physical copy
+- Eficient highlighting
+- only two color tones ysed in highlight
 - line numbering 
 - full support for rtf paste in microsoft word & google docs
 - output and code have different blocks
@@ -30,10 +31,8 @@ This project is helpful for all college students wants to attach their physical 
 ### Initiated by [![SGI-CAPP-AT2](https://avatars.githubusercontent.com/u/77089227?s=20&v=4) ShGI](https://github.com/SGI-CAPP-AT2)
 
 Recent fixes
-- Added Session Autosaves (new) 081022
-- Added Default Watermark (previous) 071022
-- Added New Font `Inconsolata` (previous) 071022
-- Added Font Customization (old) 051022
+- added site watermark
+- added session exports for autosave
 ## Sample outputs
 - [OUTPUT by paste](OUTPUTS/paste.output.docx)
 - [OUTPUT by print](OUTPUTS/print.output.pdf)
