@@ -1,17 +1,19 @@
 var $ =q=> document.querySelector(q);
 window.onload=()=>{
-    let list=[],tar = $("div.list");
+    let list=[];
     let n = parseInt(sessionStorage.list);
     for(let i=0;i<n;i++){
         list.push(JSON.parse(sessionStorage["l-"+i]));
     }
-    updateUIqueue(list,tar);
-    let pbBool = getParam("pb");
-    if(pbBool=='true'){
-        $("div.list").classList.add("list-pb");
-        console.log("page breaks added")
-    }
-    print();
+    let updated=updateUIqueue(list);
+        $("div.list").innerHTML="";
+        $("div.list").append(updated);
+        let pbBool = getParam("pb");
+        if(pbBool=='true'){
+            $("div.list").classList.add("list-pb");
+            console.log("page breaks added")
+        }
+        print();
 }
 var getParam = (p) =>{
     let urlParams = new URLSearchParams(window.location.search),
@@ -19,8 +21,8 @@ var getParam = (p) =>{
     console.log(p,product,"pro")
     return product;
 },
-updateUIqueue = (list,tar) =>{
-    let html="";
+updateUIqueue = (list) =>{
+    let html="",tar = document.createElement("div");
     console.log(list)
     if(list.length!=0){
     list.forEach(cq=>{
@@ -68,6 +70,7 @@ updateUIqueue = (list,tar) =>{
         html="Nothing found in print list"
     }
     tar.innerHTML=html;
+    return tar;
 },
 sendCodeHighlight=(val,filename)=>{
     let htmlBlock="",htmlLine,tempBlock;
@@ -89,9 +92,9 @@ function padLeadingZeros(num, size) {
 function getHighlight(code,filename){
     if(filename.includes(".")){
         try{
-        code = hljs.highlight(code,{language:filename.split(".")[filename.split(".").length-1]}).value;
+            code = hljs.highlight(code,{language:filename.split(".")[filename.split(".").length-1]}).value;
         }catch(e){
-        code = code.replaceAll("<","&lt;");
+            code = code.replaceAll("<","&lt;");
         }
         console.log(code)
         return code;
