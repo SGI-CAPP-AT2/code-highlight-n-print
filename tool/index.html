@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="ss/hljs.highlight.css">
     <link rel="stylesheet" href="ss/ui.css">
     <link rel="stylesheet" href="ss/fonts/fonts.css">
+    <link rel="stylesheet" href="themes/default.css">
+    <link rel="stylesheet" href="themes/mixture.css">
 </head>
 <body>
     <script>
@@ -69,6 +71,17 @@
         <h2 style="margin: 0;">
             Settings
         </h2>
+        <hr>
+        <strong id="set_def_theme" style="margin-left:3px;">
+            Print list Theme
+        </strong><br>
+        <label class="themeSelection operations">
+                select theme to set from list below
+                <select disabled id="themeList">
+                    <option default>Loading theme List ...</option>
+                </select>
+        </label>
+        <a href="../themesMD">click here</a> to view all themes
         <hr>
         <strong id="set_def_font" style="margin-left:3px;">
             Print list Fonts
@@ -183,5 +196,6 @@
     <script src="ss/highlight.min.js"></script>
     <script src="ss/app.js"></script>
     <script src="ss/printer-queue.js"></script>
+    <script src="themes/handle.js"></script>
 </body>
 </html>

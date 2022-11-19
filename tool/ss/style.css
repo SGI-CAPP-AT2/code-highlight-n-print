@@ -14,49 +14,6 @@ textarea,input,select{
     width: 60vw;
     resize: both;
 }
-p{
-    margin: 0 !important;
-    border-left: 5px solid black;
-    border-right: 1px solid black;
-}
-p.output,.wm{
-    border-right: 1px solid black;
-}
-p.op-header{
-    border-top: 1px solid black;
-    border-bottom: 1px dashed black;
-}
-p.wm{
-    font-size: 14px;
-    color: rgb(0, 0, 0) !important;
-    border-bottom: 1px solid black;
-}
-p.filenames{
-    border-top: 1px solid black;
-    border-bottom: 1px dashed black;
-}
-p:not(.input,.filenames,.op-header){
-    background-color: rgb(219, 219, 219);
-    color: rgb(0, 0, 0);
-}
-.outputBlock{
-    margin: auto;
-}
-button{
-    margin: 3px;
-}
-.wm span{
-    padding-left: 10px;
-}
-span.filename{
-    padding-right: 10px;
-}
-.img img{
-    max-width: calc(100% - 20px);
-}
-p.output *{
- white-space: pre;   
-}
 div.menubar{
     display: flex;
     background-color: rgb(255, 255, 255);
@@ -70,21 +27,6 @@ div.menubar *{
 }
 pre{
     margin: 0;
-}
-p.input,p.output,p.filenames{
-    white-space: pre-wrap;       /* Since CSS 2.1 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word; 
-    font-size: large;
-}
-span.ln{
-    background-color: white;
-    margin-right: 10px;
-    border-right: 1px solid black;
-    user-select: none;
-    padding: 0 2px;
 }
 .operations{
     margin-left:4px;
@@ -109,4 +51,22 @@ span.ln{
 .site-wm a{
     color: rgb(0, 0, 0);
     text-decoration: underline;
+}
+.outputBlock{
+    margin: auto;
+}
+button{
+    margin: 3px;
+}
+.wm span{
+    padding-left: 10px;
+}
+span.filename{
+    padding-right: 10px;
+}
+.img img{
+    max-width: calc(100% - 20px);
+}
+p.output *{
+    white-space: pre;   
 }

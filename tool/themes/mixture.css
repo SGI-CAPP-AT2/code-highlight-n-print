@@ -1,0 +1,40 @@
+.mix p{
+    margin: 0 !important;
+}
+.mix p.output,.mix .wm{
+    border-right: 1px solid black;
+}
+.mix p.op-header{
+    border-top: 1px dotted black;
+    border-bottom: 1px dotted black;
+}
+.mix p.wm{
+    font-size: 14px;
+    color: rgb(255, 255, 255) !important;
+    border-bottom: 1px solid black;
+}
+.mix p.wm span{
+    color:rgb(217, 217, 217);
+}
+.mix p.filenames{
+    border-bottom: 1px dotted black;
+}
+.mix p:not(.input,.filenames,.op-header){
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.mix p.input,.mix p.output,.mix p.filenames{
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word; 
+    font-size: large;
+}
+.mix span.ln{
+    background-color: white;
+    margin-right: 10px;
+    border-right: 1px dotted black;
+    user-select: none;
+    padding: 0 2px;
+}

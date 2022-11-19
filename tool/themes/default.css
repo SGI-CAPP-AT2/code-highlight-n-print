@@ -1,0 +1,43 @@
+.def p{
+    margin: 0 !important;
+    border-left: 5px solid black;
+    border-right: 1px solid black;
+}
+.def p.output,.def .wm{
+    border-right: 1px solid black;
+}
+.def p.op-header{
+    border-top: 1px solid black;
+    border-bottom: 1px dashed black;
+}
+.def p.wm{
+    font-size: 14px;
+    color: rgb(0, 0, 0) !important;
+    border-bottom: 1px solid black;
+}
+.def p.filenames{
+    border-top: 1px solid black;
+    border-bottom: 1px dashed black;
+}
+.def p:not(.input,.filenames,.op-header){
+    background-color: rgb(219, 219, 219);
+    color: rgb(0, 0, 0);
+}
+.def p.output *{
+ white-space: pre;   
+}
+.def p.input,.def p.output,.def p.filenames{
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word; 
+    font-size: large;
+}
+.def span.ln{
+    background-color: white;
+    margin-right: 10px;
+    border-right: 1px solid black;
+    user-select: none;
+    padding: 0 2px;
+}
