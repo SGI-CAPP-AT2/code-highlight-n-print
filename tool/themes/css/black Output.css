@@ -1,0 +1,46 @@
+.bko p{
+    margin: 0 !important;
+    border-left: 5px solid black;
+    border-right: 1px solid black;
+}
+.bko p.output,.bko .wm{
+    border-right: 1px solid black;
+}
+.bko p.op-header{
+    border-top: 1px solid black;
+    border-bottom: 1px dashed black;
+}
+.bko p.wm{
+    font-size: 14px;
+    color: rgb(242, 242, 242) !important;
+    border-bottom: 1px solid black;
+}
+.bko p.wm span{
+    color: rgb(183, 183, 183) !important;
+}
+.bko p.filenames{
+    border-top: 1px solid black;
+    border-bottom: 1px dashed black;
+}
+.bko p:not(.input,.op-header){
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.bko p.output *{
+ white-space: pre;   
+}
+.bko p.input,.bko p.output,.bko p.filenames{
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word; 
+    font-size: large;
+}
+.bko span.ln{
+    background-color: white;
+    margin-right: 10px;
+    border-right: 1px solid black;
+    user-select: none;
+    padding: 0 2px;
+}

@@ -6,5 +6,9 @@
     {
         "name":"No outline",
         "className":"mix"
+    },
+    {
+        "name":"black output",
+        "className":"bko"
     }
 ]
