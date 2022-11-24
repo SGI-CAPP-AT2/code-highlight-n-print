@@ -59,7 +59,6 @@ updateUIqueue = (list) =>{
                         <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print">
                             ShGI/code-highlight-n-print
                         </a>
-                        &nbsp;
                     </span>
                 </span>
             </div>
