@@ -5,7 +5,7 @@ changeUiFonts=(val)=>
 {
     document.body.classList.remove(font());
     document.body.classList.add(val);
-    localStorage.setFont=val;
+    localStorage.setFont=val;setSettingsMenu();
 },
 loadCallFonts=()=>
 {

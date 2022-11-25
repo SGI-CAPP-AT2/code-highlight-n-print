@@ -140,6 +140,7 @@ var showSessions = (button) =>{
         $("sessions-saved").style.display="none";
         button.innerText="Show";
     }
+    renderSessions();
 }
 var renderSessions = () =>{
     let sessionList;
@@ -157,11 +158,11 @@ var renderSessions = () =>{
         <div class="sessionName">${session.sessionName}</div>
         <div class="sessionDate">${date.toLocaleString()}</div>
         <div class="sessionLink">
-            <a href='?loadSession=${session.sessionID}'>Load</a>
+            <a href='javascript:moveToSession("${session.sessionID}")'>Load</a>
             |
-            <button onclick="downloadSession('${session.sessionID}')" data-id="${session.sessionID}">Download</button>
+            <a href="javascript:downloadSession('${session.sessionID}')" data-id="${session.sessionID}">Download</a>
             |
-            <a href='?DeleteSession=${session.sessionID}'>Delete</a>
+            <a href='javascript:deleteSession("${session.sessionID}")'>Delete</a>
         </div>
         `
         target.append(holder);
@@ -199,6 +200,7 @@ var moveToSession = (id) =>{
     }else{
         show_message("No Session with "+id+" ID found")
     }
+    enableSessionAutosave();
 }
 var deleteSession = (id) =>{
     let all_s = JSON.parse(localStorage.sessionsList);
