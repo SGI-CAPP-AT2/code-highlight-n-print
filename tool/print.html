@@ -24,7 +24,7 @@
     </h3></div>
     <script>
         document.body.classList.add(localStorage.setFont);
-        document.body.classList.add(localStorage.themeCode);
+        document.body.classList.add(sessionStorage.themeCode||localStorage.themeCode);
     </script>
     <script src="ss/highlight.min.js"></script>
     <script src="ss/printer.js"></script>
