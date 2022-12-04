@@ -1,0 +1,47 @@
+.ntb p{
+    margin: 0 !important;
+}
+.ntb p.wm{
+    font-size: 14px;
+    color: rgb(0, 0, 0) !important;
+}
+.ntb p br{
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    background-color: black;
+    content: "." !important;
+    
+}
+.ntb p.wm span{
+    color: rgb(87, 87, 87) !important;
+}
+.ntb p.filenames{
+    border-bottom: 1px solid black;
+}
+.ntb p:not(.input,.op-header){
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.ntb p.output *{
+ white-space: pre;   
+}
+.ntb p.output{
+    border: 1px solid black;
+}
+.ntb p.input,.ntb p.output,.ntb p.filenames{
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word; 
+    font-size: large;
+}
+.ntb span.ln{
+    background-color: white;
+    margin-right: 2px;
+    border-right: 1px solid black;
+    user-select: none;
+    font-size: 15px;
+    padding: 0 2px;
+}

@@ -70,3 +70,6 @@ span.filename{
 p.output *{
     white-space: pre;   
 }
+.ntb p.output{
+    padding: 2px;
+}
