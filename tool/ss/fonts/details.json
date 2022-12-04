@@ -13,10 +13,5 @@
         "Title":"Inconsolata (Designed by Raph Levien) ~ fonts.google.com",
         "ClassName":"inconsolata-google-fonts",
         "css":"'Inconsolata'"
-    },
-    {
-        "Title":"Gemunu Libre (Designed by Mooniak) ~ fonts.google.com",
-        "ClassName":"gemunuLibre-google-fonts",
-        "css":"'Gemunu Libre'"
     }
 ]
