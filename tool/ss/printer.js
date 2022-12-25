@@ -13,7 +13,8 @@ window.onload=()=>{
             $("div.list").classList.add("list-pb");
             console.log("page breaks added")
         }
-        print();
+        if(isFailed()==false)
+            print();
 }
 var getParam = (p) =>{
     let urlParams = new URLSearchParams(window.location.search),
@@ -21,6 +22,7 @@ var getParam = (p) =>{
     console.log(p,product,"pro")
     return product;
 },
+failed = false,
 updateUIqueue = (list) =>{
     let html="",tar = document.createElement("div");
     console.log(list)
@@ -68,7 +70,15 @@ updateUIqueue = (list) =>{
         }
     })
     }else{
-        html="Nothing found in print list"
+        html=`Nothing found in print list <br> redirecting to home page in <span id="redTimer">5</span>ms `;;
+        setTimeout(()=>{
+            window.location.assign("https://sgi-capp-at2.github.io/code-highlight-n-print/");
+        },5000)
+        let t = 4;
+        setInterval(()=>{
+            $("span#redTimer").innerHTML=t--;
+        },990)
+        failed=true;
     }
     tar.innerHTML=html;
     return tar;
@@ -83,7 +93,8 @@ sendCodeHighlight=(val,filename)=>{
             htmlBlock+=htmlLine;
         }
         return htmlBlock;
-};
+},
+isFailed = () =>failed;
 
 function padLeadingZeros(num, size) {
     var s = num+"";

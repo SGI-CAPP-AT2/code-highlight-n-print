@@ -4,6 +4,9 @@
 .ntb p.wm{
     font-size: 14px;
     color: rgb(0, 0, 0) !important;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
 }
 .ntb p br{
     display: block;
@@ -11,7 +14,6 @@
     height: 0.5px;
     background-color: black;
     content: "." !important;
-    
 }
 .ntb p.wm span{
     color: rgb(87, 87, 87) !important;
@@ -27,7 +29,8 @@
  white-space: pre;   
 }
 .ntb p.output{
-    border: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
 }
 .ntb p.input,.ntb p.output,.ntb p.filenames{
     white-space: pre-wrap;       /* Since CSS 2.1 */
@@ -44,4 +47,8 @@
     user-select: none;
     font-size: 15px;
     padding: 0 2px;
+}
+.ntb p.op-header{
+    border-right: 1px solid black;
+    border-left: 1px solid black;
 }

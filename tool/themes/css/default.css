@@ -26,6 +26,9 @@
 .def p.output *{
  white-space: pre;   
 }
+.def p.img p{
+    border: 1px solid black !important;
+}
 .def p.input,.def p.output,.def p.filenames{
     white-space: pre-wrap;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
