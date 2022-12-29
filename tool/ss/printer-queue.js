@@ -53,15 +53,16 @@ function PRINT(){
     let list = [...queue];
     let i = 0;
     if(list.length!=0){
-    list.forEach(el=>{
-        sessionStorage["l-"+i++]=JSON.stringify(el);
-    })
-    sessionStorage.list=i;
-    let pbVal = $("select#p_b_p").value;
-    console.log(pbVal)
-    window.location.assign(
-        "print.html?pb="+pbVal+"&swm=true"
-    )
+        list.forEach(el=>{
+            sessionStorage["l-"+i++]=JSON.stringify(el);
+        })
+        sessionStorage.list=i;
+        let pbVal = $("select#p_b_p").value,
+        pdVal = $("select#p_d_p").value;
+        console.log(pbVal)
+        window.location.assign(
+            "print.html?pb="+pbVal+"&swm=true&wd="+pdVal
+        )
     }else{
        show_message("nothing listed for print")
     }

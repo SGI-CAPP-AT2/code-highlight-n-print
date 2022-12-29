@@ -22,6 +22,23 @@ var getParam = (p) =>{
     console.log(p,product,"pro")
     return product;
 },
+time=()=>{
+    if(getParam("wd")=="true")
+    {
+        return `
+        <div align="left" class="dt">
+                <span>
+                    <span>
+                        ${
+                            (new Date).toLocaleString()
+                        }&nbsp;
+                    </span>
+                </span>
+            </div>
+        `
+    }
+    return ""
+},
 failed = false,
 updateUIqueue = (list) =>{
     let html="",tar = document.createElement("div");
@@ -49,7 +66,8 @@ updateUIqueue = (list) =>{
             ${cq.watermark}
             </span>
         </p>
-        </div>
+        </div><br>
+        ${time()}
         `
         if(getParam("swm")=='true'){
             html+=`
