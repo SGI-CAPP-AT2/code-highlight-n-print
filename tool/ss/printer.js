@@ -27,7 +27,8 @@ time=()=>{
     {
         return `
         <div align="left" class="dt">
-                <span>
+                <span class="date-wm">
+                <img src="ss/fonts/imgs/time.svg" alt="Date WaterMark"/>
                     <span>
                         ${
                             (new Date).toLocaleString()
@@ -73,7 +74,7 @@ updateUIqueue = (list) =>{
             html+=`
             <div align="right" class="swm">
                 <span class="site-wm">
-                    <img src="ss/wm.svg" alt="Site WaterMark"/>
+                    <img src="ss/fonts/imgs/wm.svg" alt="Site WaterMark"/>
                     <span>
                         Formatted & Printed With 
                         <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print">

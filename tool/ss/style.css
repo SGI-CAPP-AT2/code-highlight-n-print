@@ -34,19 +34,22 @@ pre{
 .swm{
     text-align: right;
 }
-.site-wm{
+.site-wm,.date-wm{
     display: inline-flex;
     vertical-align: middle;
     margin: 10px 1px;
-    border: 1px dashed black;
     font-size: 12px;
 }
-.site-wm span{
+.site-wm{
+    border: 1px dashed black;
+}
+.site-wm span,.date-wm span{
     margin: auto 0;
 }
-.site-wm img{
+.site-wm img,.date-wm img{
     height: 12px;
     margin: 3px;
+    vertical-align: middle;
 }
 .site-wm a{
     color: rgb(0, 0, 0);
@@ -70,8 +73,8 @@ span.filename{
 p.output *{
     white-space: pre;   
 }
-p.output,p.op-header,p.filenames{
-    padding: 2px;
+p.output,p.op-header{
+    padding-left: 2px;
 }
 p *
 {
