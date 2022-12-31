@@ -18,5 +18,10 @@
         "Title":"Roboto (Designed by Christian Robertson) ~ fonts.google.com",
         "ClassName":"roboto-google-fonts",
         "css":"Roboto"
+    },
+    {
+        "Title":"Open Sans (Designed by Steve Matteson) ~ fonts.google.com",
+        "ClassName":"open-sans-google-fonts",
+        "css":"Open Sans"
     }
 ]

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Open+Sans&family=Roboto&display=swap');
 .default-fonts *{
     font-family: monospace;
 }
@@ -10,4 +10,7 @@
 }
 .roboto-google-fonts *{
     font-family: 'Roboto';
+}
+.open-sans-google-fonts *{
+    font-family: 'Open Sans';
 }
