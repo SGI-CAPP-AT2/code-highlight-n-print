@@ -22,20 +22,31 @@ var getParam = (p) =>{
     console.log(p,product,"pro")
     return product;
 },
+dateObj=new Date()
+,
 time=()=>{
     if(getParam("wd")=="true")
     {
         return `
         <div align="left" class="dt">
-                <span class="date-wm">
-                <img src="ss/fonts/imgs/time.svg" alt="Date WaterMark"/>
-                    <span>
-                        ${
-                            (new Date).toLocaleString()
-                        }&nbsp;
-                    </span>
+            <span class="date-wm">
+            <img src="ss/fonts/imgs/time.svg" alt="Date WaterMark"/>
+                <span>
+                    Printed On
+                    <strong>
+                    ${
+                       dateObj
+                    }
+                    </strong>
+                    <small>
+                    (${
+                        dateObj.getTime()
+                    })
+                    </small>
                 </span>
-            </div>
+                &nbsp;
+            </span>
+        </div>
         `
     }
     return ""
