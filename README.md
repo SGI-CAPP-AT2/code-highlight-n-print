@@ -14,7 +14,7 @@
 
 ## Description of project
 
-This project is helpful for all college students wants to attach their physical copies of code & output with problem statement, filename and compiler details.
+Convert your code with highlight into rich text using BnW highlighter
 
 ## Features
 
