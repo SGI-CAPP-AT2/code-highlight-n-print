@@ -20,7 +20,11 @@ var getParam = (p) =>{
     let urlParams = new URLSearchParams(window.location.search),
     product = urlParams.get(p);
     console.log(p,product,"pro")
-    return product;
+    if(product!=null){
+        return product;
+    }else{
+        return sessionStorage[p]
+    }
 },
 dateObj=new Date()
 ,
