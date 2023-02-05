@@ -272,3 +272,19 @@ saveToLocalStorage=(json)=>{
         sessionAt:json.time
     })
 };
+var saveAsProf = () =>
+{
+    let name = $("#profSave").value;
+    profs = JSON.parse(localStorage.profs||"[]");
+    profs.push({
+        name:name,
+        props:
+        {
+            themeCode:localStorage.themeCode,
+            setFont:localStorage.setFont,
+            defaultWatermark:localStorage.defaultWatermark
+        }
+    })
+    localStorage.profs= JSON.stringify(profs);
+}
+$("#profSave").value = (new Date).getTime()+"_Profile"

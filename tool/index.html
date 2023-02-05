@@ -102,6 +102,19 @@
                 create a default watermark
                 <input oninput="changeDefaultWM(this.value)" id="watermark-or"/>
         </label><hr>
+        <strong id="set_as_prof" style="margin-left:3px;">
+            Profiles
+        </strong><br>
+        <label class="operations">
+                save current preferences as Profile 
+                <div style="display:flex">
+                <input id="profSave" placeholder="Enter Name for Profile"/>
+                <button onclick="saveAsProf()">Save</button></div>
+        </label><hr>
+        <label class="operations">
+                Set Profile
+                <a href="profiles/">[Click]</a>
+        </label><hr>
         <strong id="set_Cache" style="margin-left:3px;">
             Load Sessions
         </strong><br>
