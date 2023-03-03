@@ -8,11 +8,6 @@ window.onload=()=>{
     let updated=updateUIqueue(list);
         $("div.list").innerHTML="";
         $("div.list").append(updated);
-        let pbBool = getParam("pb");
-        if(pbBool=='true'){
-            $("div.list").classList.add("list-pb");
-            console.log("page breaks added")
-        }
         if(isFailed()==false)
             print();
 }
@@ -26,6 +21,35 @@ var getParam = (p) =>{
         return sessionStorage[p]
     }
 },
+pageBreak=()=>
+{
+    let pbBool = getParam("pb");
+    if(pbBool=='true'){
+        return "<page-break>Page Break</page-break>"
+    }
+    return ""
+},
+swm=()=>
+{
+    if(getParam("swm")=='true'){
+        return`
+        <div align="right" class="swm">
+            <span class="site-wm">
+                <img src="https://cdn.jsdelivr.net/gh/SGI-CAPP-AT2/code-highlight-n-print/tool/ss/fonts/imgs/wm.svg" alt="Site WaterMark"/>
+                <span>
+                    Formatted & Printed With 
+                    <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print">
+                        ShGI/code-highlight-n-print
+                    </a>
+                </span>
+            </span>
+        </div>
+        `
+    }else{
+        return"<div class='swm'></div>"
+    }
+}
+,
 dateObj=new Date()
 ,
 time=()=>{
@@ -84,24 +108,9 @@ updateUIqueue = (list) =>{
         </p>
         </div><br>
         ${time()}
+        ${swm()}
+        ${pageBreak()}
         `
-        if(getParam("swm")=='true'){
-            html+=`
-            <div align="right" class="swm">
-                <span class="site-wm">
-                    <img src="https://cdn.jsdelivr.net/gh/SGI-CAPP-AT2/code-highlight-n-print/tool/ss/fonts/imgs/wm.svg" alt="Site WaterMark"/>
-                    <span>
-                        Formatted & Printed With 
-                        <a href="https://github.com/SGI-CAPP-AT2/code-highlight-n-print">
-                            ShGI/code-highlight-n-print
-                        </a>
-                    </span>
-                </span>
-            </div>
-            `
-        }else{
-            html+="<div class='swm'></div>"
-        }
     })
     }else{
         html=`Nothing found in print list <br> redirecting to home page in <span id="redTimer">5</span>ms `;;

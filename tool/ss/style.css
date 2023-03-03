@@ -23,7 +23,16 @@ div.menubar *{
     color: rgb(0, 0, 0);
 }
 @media print {
-    .list-pb .swm{page-break-after: always;}
+    page-break{
+        page-break-after: always;
+        color: transparent !important;
+    }
+}
+page-break
+{
+    color: red;
+    display: block;
+    text-align: center;
 }
 pre{
     margin: 0;
