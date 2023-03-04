@@ -1,7 +1,0 @@
-{
-    "files.exclude": {
-        "**/.*": true,
-        "**/.git": false
-    },
-    "liveServer.settings.port": 5501
-}
