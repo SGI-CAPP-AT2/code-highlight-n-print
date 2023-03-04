@@ -8,4 +8,3 @@ Downloading is to save session in the form of file into your disk which will be 
 The session file will be saved as `chnp-session-json` extension which can be opened in notepad
 ## Read `chnp-session-json`
 You can refer [official repo](https://github.com/SGI-CAPP-AT2/chnp-file) to do changes into your file. you can also use OOP based realtime editor library in js from that repo
- 
