@@ -79,6 +79,13 @@ time=()=>{
     }
     return ""
 },
+isAPI=()=>
+{
+    if(sessionStorage.printedByAPI==true)
+    {
+        return `<p align="right"><b>Printed from API</b><br><small>(i) Original document is edited to get this copy</small></p>`
+    }
+},
 failed = false,
 updateUIqueue = (list) =>{
     let html="",tar = document.createElement("div");
@@ -109,6 +116,7 @@ updateUIqueue = (list) =>{
         </div><br>
         ${time()}
         ${swm()}
+        ${isAPI()}
         ${pageBreak()}
         `
     })
