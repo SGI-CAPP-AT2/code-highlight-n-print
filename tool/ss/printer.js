@@ -85,6 +85,7 @@ isAPI=()=>
     {
         return `<p align="right"><b>Printed from API</b><br><small>(i) Original document is edited to get this copy</small></p>`
     }
+    return ``
 },
 failed = false,
 updateUIqueue = (list) =>{
