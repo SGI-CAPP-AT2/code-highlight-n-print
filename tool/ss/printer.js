@@ -81,7 +81,7 @@ time=()=>{
 },
 isAPI=()=>
 {
-    if(sessionStorage.printedByAPI==true)
+    if(sessionStorage.printedByAPI=='true')
     {
         return `<p align="right"><b>Printed from API</b><br><small>(i) Original document is edited to get this copy</small></p>`
     }
