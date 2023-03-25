@@ -51,6 +51,7 @@ pre{
 }
 .site-wm{
     border: 1px dashed black;
+    padding-right: 3px;
 }
 .site-wm span,.date-wm span{
     margin: auto 0;
