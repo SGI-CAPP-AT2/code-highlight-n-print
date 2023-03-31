@@ -20,7 +20,7 @@
     border-bottom: 1px dashed black;
 }
 .def p:not(.input,.filenames,.op-header){
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(196, 196, 196);
     color: rgb(0, 0, 0);
 }
 .def p.output *{
