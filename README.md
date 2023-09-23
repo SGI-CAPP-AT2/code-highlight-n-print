@@ -1,4 +1,4 @@
-# ![/README assets/banner.png](https://github.com/SGI-CAPP-AT2/code-highlight-n-print/blob/main/README%20assets/banner.png?raw=true)
+# ![/README assets/banner.png](https://raw.githubusercontent.com/SGI-CAPP-AT2/code-highlight-n-print/main/README%20assets/banner.png)
 
 # code-highlight-n-print
 - A code highlighter for microsoft word and print code problems with there code, output, graphics output, title, filename and watermark
