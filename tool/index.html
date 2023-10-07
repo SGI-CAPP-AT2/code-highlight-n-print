@@ -162,8 +162,8 @@
     </label>
     <label style="margin: 3px;">Page Breaks in prints
         <select class="uk-select" id="p_b_p">
-            <option default value="false">false</option>
-            <option selected="selected" value="true">
+            <option selected="selected" default value="false">false</option>
+            <option value="true">
                 true
             </option>
         </select>
@@ -185,6 +185,9 @@
         </button>
         <button onclick="addToQueue()">
             List
+        </button>
+        <button onclick="addToQueue({pb:true})">
+            List & Break Page *
         </button></div>
     <div class="outputBlock" style="margin-top:10px">
         <p class="filenames"><span class="filename">FILENAME_APPEARS_HERE.cpp</span></p>

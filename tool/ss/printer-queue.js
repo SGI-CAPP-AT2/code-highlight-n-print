@@ -68,12 +68,18 @@ function PRINT(){
     }
 }
 // Add current inputs to queue
-const addToQueue = () =>{
+const addToQueue = (constraints) =>{
     let tmp = {};
     
     Object.keys(domObjects).forEach(key=>{
         tmp[key]=domObjects[key].value()
     })
+    if(constraints){
+        tmp.__cns={};
+        Object.keys(constraints).forEach(key=>{
+            tmp.__cns[key]=constraints[key];
+        })
+    }
     tmp.title=tmp.title;
     queue.push(tmp);
     updateUIqueue();

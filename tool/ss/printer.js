@@ -21,12 +21,13 @@ var getParam = (p) =>{
         return sessionStorage[p]
     }
 },
-pageBreak=()=>
+pageBreak=(constraints)=>
 {
     let pbBool = getParam("pb");
-    if(pbBool=='true'){
+    if(pbBool=='true'||constraints&&(constraints.pb==true)){
         return "<page-break>Page Break</page-break>"
     }
+    console.log(constraints)
     return ""
 },
 swm=()=>
@@ -118,7 +119,7 @@ updateUIqueue = (list) =>{
         ${time()}
         ${swm()}
         ${isAPI()}
-        ${pageBreak()}
+        ${pageBreak(cq.__cns)}
         `
     })
     }else{
