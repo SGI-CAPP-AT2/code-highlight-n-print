@@ -90,3 +90,6 @@ p *
 {
     word-wrap: break-word;
 }
+.imageOutput > img{
+    max-height: 550px;
+}
