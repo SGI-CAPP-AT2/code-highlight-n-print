@@ -1,3 +1,5 @@
+# Consider Using [Chnp-Cli](https://github.com/SGI-CAPP-AT2/chnp-cli)
+
 # ![/README assets/banner.png](https://raw.githubusercontent.com/SGI-CAPP-AT2/code-highlight-n-print/main/README%20assets/banner.png)
 
 # code-highlight-n-print
